@@ -1,0 +1,36 @@
+/*
+*    Filename: filter.css
+*    Description: None.
+*    Last modified: 2014-03-19 10:27
+*
+*    陈炜健 － 13331018
+*    Email: eleveneat@gmail.com
+*/
+body {
+	font-family: Arial, Verdana, sans-serif;
+}
+table {
+	border: 1px gray solid;
+	border-spacing: 0px;
+}
+th  {
+	border: 1px gray solid;
+	background-color: rgba(2, 28, 125, 1);
+	color: white;
+	text-align: left;
+	padding-right: 40px;
+}
+td {
+	border: 1px gray solid;
+	padding-right: 40px;
+}
+.alternate {
+	background-color: rgba(214, 214, 214, 1);
+}
+.invisibility {
+	display: none;
+}
+.keyword {
+	font-weight: bold;
+	background-color: yellow;
+}
