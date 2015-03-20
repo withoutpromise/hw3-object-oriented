@@ -1,0 +1,32 @@
+.ascend {
+    background: url(./ascend.png) no-repeat #CFD5F4 right;
+}
+
+.descend {
+    background: url(./descend.png) no-repeat #CFD5F4 right;
+}
+
+.alternate {
+    background-color: #666;
+}
+
+.highlight {
+    color: red;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px #B6A9A9;
+    padding: 3px 15px 3px 3px;
+}
+
+th {
+    cursor: pointer;
+    color: #FFF;
+    background-color: #141F93;
+    text-align: left;
+}
+
