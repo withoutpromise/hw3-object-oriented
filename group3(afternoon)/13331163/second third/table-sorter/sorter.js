@@ -29,8 +29,30 @@ var util = (function() {
 	}
 })();
 
+/**
+ * 改变奇偶数行的状态
+ * @param {HTMLTableElement} oTable
+ */
+function changeRowsStatus(oTable) {
+	// 获取所有tbody的row
+	var rows = oTable.getElementsByTagName('tbody')[0].rows;
+	// 遍历所有row，去除所有的alternate状态并且对可视的偶数行进行标记
+	for (var i = 0, current = 0; i < rows.length; i++) {
+		util.removeClass(rows[i], 'alternate');
+		if (!util.hasClass(rows[i], 'hidden')) {
+			if (current % 2 == 1) {
+				util.addClass(rows[i], 'alternate');
+			}
+			current = (current + 1) % 2;
+		}
+	}
+}
 
-// 使表格可排序
+
+/**
+ * 使表格可排序
+ * @param {HTMLTableElement} oTable
+ */
 function makeSortable(oTable) {
 	var aTh = oTable.getElementsByTagName('th');
 	for (var i = 0; i < aTh.length ; i++) {
@@ -65,8 +87,6 @@ function makeSortable(oTable) {
 				var arr = [];
 				for (var i = 0; i < oTbody.rows.length; i++) {
 					arr[i] = oTbody.rows[i];
-					// 删除所有奇偶数行的标志
-					util.removeClass(arr[i], 'alternate');
 				}
 
 				// 根据被点击的th的当前状态决定排序的规则
@@ -82,8 +102,6 @@ function makeSortable(oTable) {
 
 				// 将所得排序结果返回到tbody中
 				for (var i = 0; i < arr.length; i++) {
-					// 设置偶数行的状态
-					if (i % 2 == 1) util.addClass(arr[i], 'alternate');
 					oTbody.appendChild(arr[i]);
 				}
 
@@ -96,7 +114,11 @@ function makeSortable(oTable) {
 	return oTable;
 }
 
-// 测试行匹配是否成功
+/**
+ * 测试行匹配是否成功
+ * @param {HTMLTableRowElement} row
+ * @param {string} value
+ */
 function rowMatch(row, value) {
 	// 制作正则表达式和替换字符串
 	var regExp = new RegExp('('+value+')','gi');
@@ -120,6 +142,10 @@ function rowMatch(row, value) {
 	return isRowMatch;
 }
 
+/**
+ * 还原过滤状态
+ * @param {HTMLTableElement} oTable
+ */
 function fliterRecover(oTable) {
 	// 设置还原的正则表达式
 	var regExp = new RegExp('<span class=\"highlight\">|<\/span>', 'g');
@@ -134,6 +160,11 @@ function fliterRecover(oTable) {
 	}
 }
 
+
+/**
+ * 使表格可过滤化
+ * @param {HTMLTableElement} oTable
+ */
 function makeFilterable(oTable) {
 	// 创建fliter输入框
 	var oInput = document.createElement('input');
@@ -157,8 +188,9 @@ function makeFilterable(oTable) {
 			if (!rowMatch(aRows[i], this.value)) {
 				util.addClass(aRows[i], 'hidden');
 			}
-
 		}
+		// 改变行的状态
+		changeRowsStatus(oTable);
 	};
 
 	return oTable;
