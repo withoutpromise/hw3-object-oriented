@@ -1,0 +1,29 @@
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1.5px #D3D3D3 solid;
+	font-family: Verdana, Geneva, sans-serif;
+	padding: 5px;
+}
+
+th {
+	text-align: left;
+	color: white;
+	background-color: #00008B;
+	padding-right: 30px;
+}
+
+.alternate {
+	background-color: #E6E6FA;
+}
+
+.stress {
+	color: red;
+	font-weight: bold;
+}
