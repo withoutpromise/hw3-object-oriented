@@ -57,6 +57,7 @@ th, td {
 	display: none;
 }
 
+/*高亮标志匹配的信息*/
 .highlight {
 	color: red;
 }

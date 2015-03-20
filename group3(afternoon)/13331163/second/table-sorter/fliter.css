@@ -6,14 +6,10 @@ table, th, td {
 	border-collapse: collapse;
 }
 
-/*设置todo表格的宽度*/
-#todo {
+/*固定表格*/
+table {
 	width: 50em;
-}
-
-/*设置staff表格的宽度*/
-#staff {
-	width: 40em;
+	table-layout: fixed;
 }
 
 /*设置th和td内文字的左对齐*/
@@ -45,6 +41,23 @@ th, td {
 	background-position: right;
 }
 
+/*行的奇偶样式*/
 .alternate {
 	background-color: #DDDDDD;
+}
+
+/*过滤输入框的样式*/
+.filterInput {
+	width: 15em;
+	margin-bottom: 1em;
+}
+
+/*行隐藏*/
+.hidden {
+	display: none;
+}
+
+/*高亮标志匹配的信息*/
+.highlight {
+	color: red;
 }
