@@ -10,7 +10,7 @@ Base.staticMethod = function () {
   console.log('This is from Base class static-method, static-variable is: ' + this.staticVariable);
 };
 
-function extend(base, derived) {
+var extend = function (base, derived) {
   derived = function (variable) {
     this.instanceVariable = variable;
     this.instanceMethod = function () {
@@ -21,7 +21,7 @@ function extend(base, derived) {
   derived.prototype = new base();
   derived.staticVariable = 'Derived';
   derived.staticMethod = function () {
-    base.staticMethod.call(this);
+    this.prototype.constructor.staticMethod.call(this);
     console.log('This is from Derived class static-method, static-variable is: ' + this.staticVariable);
   };
   return derived;
