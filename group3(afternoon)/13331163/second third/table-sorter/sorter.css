@@ -50,8 +50,6 @@ th, td {
 	background-color: #DDDDDD;
 }
 
-
-/*hw3*/
 /*过滤输入框的样式*/
 .filterInput {
 	width: 15em;
@@ -65,6 +63,5 @@ th, td {
 
 
 .highlight {
-	font-size: 16pt;
 	color: red;
 }

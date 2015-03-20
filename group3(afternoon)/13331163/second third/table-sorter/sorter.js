@@ -29,13 +29,9 @@ var util = (function() {
 	}
 })();
 
-// 获取所有的表格
-function getAllTables() {
-	return document.getElementsByTagName('table');
-}
 
 // 使表格可排序
-function makeTableSortable(oTable) {
+function makeSortable(oTable) {
 	var aTh = oTable.getElementsByTagName('th');
 	for (var i = 0; i < aTh.length ; i++) {
 		// 给每个th添加初始默认状态
@@ -43,6 +39,8 @@ function makeTableSortable(oTable) {
 		// 设置th的点击事件
 		aTh[i].onclick = (function(ith) {
 			return function() {
+				// 还原过滤状态
+				fliterRecover(oTable);
 
 				// 还原所有th（除被点击的th）的状态
 				var aTh = this.parentNode.getElementsByTagName('th');
@@ -89,38 +87,11 @@ function makeTableSortable(oTable) {
 					oTbody.appendChild(arr[i]);
 				}
 
+				// 显式调用过滤器
+				oTable.previousSibling.oninput();
 			};
 		})(i);
 	}
-}
-
-// 使所有表格可排序
-function makeAllTablesSortable(tables) {
-	for (var i = 0; i < tables.length; i++) {
-		makeTableSortable(tables[i]);
-	}
-}
-
-// window.onload = function() {
-// 	var tables = getAllTables();
-// 	makeAllTablesSortable(tables);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function makeSortable(oTable) {
-
 	return oTable;
 }
 
@@ -128,7 +99,7 @@ function makeSortable(oTable) {
 function rowMatch(row, value) {
 	// 制作正则表达式和替换字符串
 	var regExp = new RegExp(value,'gi');
-	var replaceString = '<span class=\'highlight\'>'+value+'</span>';
+	var replaceString = "<span class=\'highlight\'>"+value+"</span>";
 
 	// 假设匹配不成功
 	var isRowMatch = false;
@@ -148,13 +119,14 @@ function rowMatch(row, value) {
 
 function fliterRecover(oTable) {
 	// 设置还原的正则表达式
-	var regExp = new RegExp('<span class=\'highlight\'>|<\/span>', 'g');
+	var regExp = new RegExp('<span class=\"highlight\">|<\/span>', 'g');
 	// 获取需要还原的行
 	var aRows = oTable.getElementsByTagName('tbody')[0].rows;
 	// 遍历行的每个cell还原
 	for (var i = 0; i < aRows.length; i++) {
 		for (var j = 0; j < aRows[i].cells.length; j++) {
 			aRows[i].cells[j].innerHTML = aRows[i].cells[j].innerHTML.replace(regExp, '');
+			console.log(aRows[i].cells[j].innerHTML);
 		}
 	}
 }
@@ -167,9 +139,8 @@ function makeFilterable(oTable) {
 	// 向页面添加fliter输入框
 	oTable.parentNode.insertBefore(oInput, oTable);
 
-	
-
 	oInput.oninput = function() {
+		// 还原表格
 		fliterRecover(oTable);
 
 		// 获取tbody的行信息
