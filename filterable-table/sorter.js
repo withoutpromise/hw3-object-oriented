@@ -23,6 +23,7 @@ function makeFilterable(targetTable) {
 				filterTable(textInput);
 			}
 		}(textInput);
+	return targetTable;
 }
 
 var tablesData = new Array();
@@ -58,30 +59,20 @@ function filterTable(targetInput) {
 }
 
 function makeAllTablesSortable(tables) {
-	var thArray = new Array();
-	
-	// find all the head of tables and register their onclick event
 	for (var count = 0; count < tables.length; count++) {
-		for (var temp = 0; temp < tables[count].rows[0].cells.length; temp++) {
-			tables[count].rows[0].cells[temp].onclick = function () {
-			    sortBy(this, tables);
-		    }
-		}
+		makeSortable(tables[count]);
 	}
 }
 
-  // sort the table by the given thead of colume: target
-function sortBy(target, tables) {
-	
-	// find the table that hold target
-	for (var count = 0; count < tables.length; count++) {
-		for (var temp = 0; temp < tables[count].rows[0].cells.length; temp++) {
-			if (target == tables[count].rows[0].cells[temp]) {
-				sortTable(tables[count], temp);
-				break;
+function makeSortable(targetTable) {
+	for (var count = 0; count < targetTable.rows[0].cells.length; count++) {
+		targetTable.rows[0].cells[count].onclick = function(targetTablePara, countPara) {
+			return function() {
+				sortTable(targetTablePara, countPara)
 			}
-		}
+		}(targetTable, count);
 	}
+	return targetTable;
 }
 
   // the main function that sort the table, colume is the colume of the table that being selected
