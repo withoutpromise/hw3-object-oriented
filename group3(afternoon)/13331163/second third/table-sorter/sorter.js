@@ -92,23 +92,26 @@ function makeSortable(oTable) {
 			};
 		})(i);
 	}
+
 	return oTable;
 }
 
 // 测试行匹配是否成功
 function rowMatch(row, value) {
 	// 制作正则表达式和替换字符串
-	var regExp = new RegExp(value,'gi');
-	var replaceString = "<span class=\'highlight\'>"+value+"</span>";
+	var regExp = new RegExp('('+value+')','gi');
 
 	// 假设匹配不成功
 	var isRowMatch = false;
 
 	// 对row的每一列进行匹配
 	for (var j = 0; j < row.cells.length; j++) {
-		if (row.cells[j].innerHTML.match(regExp)) {
-			// 匹配成功则替换innerHTML
-			row.cells[j].innerHTML = row.cells[j].innerHTML.replace(regExp, replaceString);
+		// 匹配并且替换匹配得到的字符串
+		var replaceString = row.cells[j].innerHTML.replace(regExp, "<span class=\'highlight\'>$1</span>");
+		// 判断所匹配的cell是否有改变
+		if (replaceString != row.cells[j].innerHTML) {
+			// 若成功改变，修改cell的值
+			row.cells[j].innerHTML = replaceString;
 			// 设置匹配成功
 			isRowMatch = true;
 		}
@@ -160,18 +163,6 @@ function makeFilterable(oTable) {
 
 	return oTable;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.onload = function() {
 	var todo = document.getElementById('todo');

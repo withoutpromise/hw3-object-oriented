@@ -6,14 +6,10 @@ table, th, td {
 	border-collapse: collapse;
 }
 
-/*设置todo表格的宽度*/
-#todo {
+/*固定表格*/
+table {
 	width: 50em;
-}
-
-/*设置staff表格的宽度*/
-#staff {
-	width: 40em;
+	table-layout: fixed;
 }
 
 /*设置th和td内文字的左对齐*/
@@ -60,7 +56,6 @@ th, td {
 .hidden {
 	display: none;
 }
-
 
 .highlight {
 	color: red;
