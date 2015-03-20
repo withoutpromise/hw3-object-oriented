@@ -101,7 +101,110 @@ function makeAllTablesSortable(tables) {
 	}
 }
 
+// window.onload = function() {
+// 	var tables = getAllTables();
+// 	makeAllTablesSortable(tables);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function makeSortable(oTable) {
+
+	return oTable;
+}
+
+// 测试行匹配是否成功
+function rowMatch(row, value) {
+	// 制作正则表达式和替换字符串
+	var regExp = new RegExp(value,'gi');
+	var replaceString = '<span class=\'highlight\'>'+value+'</span>';
+
+	// 假设匹配不成功
+	var isRowMatch = false;
+
+	// 对row的每一列进行匹配
+	for (var j = 0; j < row.cells.length; j++) {
+		if (row.cells[j].innerHTML.match(regExp)) {
+			// 匹配成功则替换innerHTML
+			row.cells[j].innerHTML = row.cells[j].innerHTML.replace(regExp, replaceString);
+			// 设置匹配成功
+			isRowMatch = true;
+		}
+	}
+	// 返回匹配结果
+	return isRowMatch;
+}
+
+function fliterRecover(oTable) {
+	// 设置还原的正则表达式
+	var regExp = new RegExp('<span class=\'highlight\'>|<\/span>', 'g');
+	// 获取需要还原的行
+	var aRows = oTable.getElementsByTagName('tbody')[0].rows;
+	// 遍历行的每个cell还原
+	for (var i = 0; i < aRows.length; i++) {
+		for (var j = 0; j < aRows[i].cells.length; j++) {
+			aRows[i].cells[j].innerHTML = aRows[i].cells[j].innerHTML.replace(regExp, '');
+		}
+	}
+}
+
+function makeFilterable(oTable) {
+	// 创建fliter输入框
+	var oInput = document.createElement('input');
+	// 给fliter输入框添加样式
+	util.addClass(oInput, 'filterInput');
+	// 向页面添加fliter输入框
+	oTable.parentNode.insertBefore(oInput, oTable);
+
+	
+
+	oInput.oninput = function() {
+		fliterRecover(oTable);
+
+		// 获取tbody的行信息
+		var aRows = oTable.getElementsByTagName('tbody')[0].rows;
+
+		for (var i = 0; i < aRows.length; i++) {
+			// 先移除隐藏属性
+			util.removeClass(aRows[i], 'hidden');
+			
+			// 如果匹配不成功，则隐藏该行
+			if (!rowMatch(aRows[i], this.value)) {
+				util.addClass(aRows[i], 'hidden');
+			}
+
+		}
+	};
+
+	return oTable;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.onload = function() {
-	var tables = getAllTables();
-	makeAllTablesSortable(tables);
+	var todo = document.getElementById('todo');
+	makeSortable(makeFilterable(todo));
+	var staff = document.getElementById('staff');
+	makeFilterable(makeSortable(staff));
 }

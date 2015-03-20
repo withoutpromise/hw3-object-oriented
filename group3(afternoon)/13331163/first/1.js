@@ -50,7 +50,6 @@ example.instanceMethod();
  */
 example = new Derived('example');
 otherExample = new Derived('other-example');
-example.staticMethod();
+Derived.staticMethod();
 example.instanceMethod();
-otherExample.staticMethod();
 otherExample.instanceMethod();

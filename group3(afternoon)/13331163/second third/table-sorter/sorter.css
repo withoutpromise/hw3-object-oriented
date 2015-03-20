@@ -45,6 +45,26 @@ th, td {
 	background-position: right;
 }
 
+/*行的奇偶样式*/
 .alternate {
 	background-color: #DDDDDD;
+}
+
+
+/*hw3*/
+/*过滤输入框的样式*/
+.filterInput {
+	width: 15em;
+	margin-bottom: 1em;
+}
+
+/*行隐藏*/
+.hidden {
+	display: none;
+}
+
+
+.highlight {
+	font-size: 16pt;
+	color: red;
 }
