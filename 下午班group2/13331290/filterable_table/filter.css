@@ -1,0 +1,40 @@
+body {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+table {
+	text-align: left;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+
+
+thead {
+	background-color: #00008B;
+	color: white;
+	cursor: pointer;
+}
+
+.alternate {
+	background-color: #DCDCDC;
+}
+
+#staff {
+	width: 34%;
+}
+
+.hidden {
+	display: none;
+}
+
+.highlight {
+	background-color: yellow;
+}
+
+.noHighlight {
+	background-color: white;
+}
+
