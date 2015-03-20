@@ -1,0 +1,51 @@
+/*
+ * Author: Yuheng Deng
+ * Date: 2015-03-20
+ * E-mail: dengyh071@gmail.com
+ * Description: The javascript to make the table sortable
+ */
+
+body {
+    margin: 0 auto;
+    margin-top: 160px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+    box-shadow: 32px 32px 48px #aaaaaa;
+    -moz-box-shadow: 32px 32px 48px #aaaaaa;
+    -webkit-box-shadow: 32px 32px 48px #aaaaaa;
+    -o-box-shadow: 32px 32px 48px #aaaaaa;
+    width: 40%;
+}
+
+h1, h2 {
+    font-family: "Times New Roman", serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+th, td {
+    border: 1px solid #aaaaaa;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+}
+
+th {
+    padding-right: 24px;
+}
+
+thead tr {
+    background-color: rgba(3,3,128,1);
+    color: white;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: rgba(222,222,222,1);
+}
