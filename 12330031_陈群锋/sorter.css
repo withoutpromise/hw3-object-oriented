@@ -1,0 +1,54 @@
+body{
+	font-family: "微软雅黑";
+	width: 500px;
+	padding: 20px;
+	margin: 80px auto;
+	box-shadow: 20px 10px 30px 1px gray;
+}
+table
+{
+	cellspacing: 0;
+	cellpadding: 5;
+	background-color: #D3D8E0;
+	
+	/*border: 1px #4F7FC9 solid;*/
+}
+tr:nth-child(even) {
+	background-color: rgb(211, 211, 211);
+}
+thead
+{
+	background-color: rgb(0, 0, 128);
+	color: white;
+}
+tr>th{
+	text-align: left;
+	padding: 0 20px 0 0;
+	background-image: url(descend.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+tr>th:hover{
+	background-color: rgb(166, 175, 252);
+	cursor: pointer;
+
+}
+tbody{
+	background-color: rgb(255, 255, 255);
+}
+
+.hide{
+	display: none;
+}
+.show{
+	display: table-row;
+}
+.tag{
+	color: white;
+	background-color: red;
+}
+.filter{
+	border-radius: 3px;
+	background-color: white;
+	border: 1px solid gray;
+}
