@@ -1,0 +1,43 @@
+body {
+	font-weight: bold;
+	font-family: Arial;
+}
+table {
+	border-collapse: collapse;
+}
+tr, td, th {
+	border: 2px solid #b2b2b2;
+}
+th {
+	background-color: blue;
+	color: white;
+	text-align: left;
+}
+.alternate {
+	background-color: #cccccc;
+}
+#staff {
+	width: 350px;	
+}
+.changeToAscend {
+	background-color: #8ab8e6;
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.changeToDescend {
+	background-color: #8ab8e6;
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.TRclean {
+	background-color: blue;
+	color: white;
+	text-align: left;
+	background-image: none;
+}
+span {
+
+	background-color: yellow;
+}
