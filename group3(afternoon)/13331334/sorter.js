@@ -75,11 +75,12 @@ function makeFilterable (table) {
           , input = document.createElement("input")
         ;
         input.setAttribute("type", "text");
+        input.className = "filterInput";
         input.oninput = doFilter_Getter(table);
         table.appendChild(prompt);
         table.appendChild(input);
-        return table;
     }
+    return table;
 }
 
 function doFilter_Getter(table) {
