@@ -17,13 +17,11 @@ function makeTableFilterable(table) {
 
 //用于初始化表格的函数
 function initialCells(rows) {
+    var v1 = new RegExp("<span>", "g");
+    var v2 = new RegExp("</span>", "g");
     for (var i = 1; i < rows.length; i++) {                              //去除spans
-        for (var j = 0; j < rows[i].cells.length; j++) {
-            var v1 = new RegExp("<span>", "g");
-            var v2 = new RegExp("</span>", "g");
-            rows[i].cells[j].innerHTML = rows[i].cells[j].innerHTML.replace(v1, "");
-            rows[i].cells[j].innerHTML = rows[i].cells[j].innerHTML.replace(v2, ""); 
-        }
+        rows[i].innerHTML = rows[i].innerHTML.replace(v1, "");
+        rows[i].innerHTML = rows[i].innerHTML.replace(v2, ""); 
         rows[i].style.display="table-row";          //恢复原先被隐藏的行
     }
 }
