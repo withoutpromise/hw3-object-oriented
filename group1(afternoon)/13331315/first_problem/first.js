@@ -2,11 +2,11 @@
 function Base(InstanceVariable)
 {
     this.instanceVariable = InstanceVariable;
-    this.instanceMethod = function()
+}
+Base.prototype.instanceMethod = function()
     {
         console.log("This is from Base class instance-method, instance-variable is: " + this.instanceVariable);
     };
-}
 
 Base.staticVariable = "Base";
 
@@ -29,15 +29,15 @@ Derived.staticVariable = "Derived";
 
 Derived.staticMethod = function()
 {
-    Derived.__proto__.staticMethod.call(this);//to use the Base function.
+    Derived.__proto__.staticMethod.call(this);//类继承
     console.log("This is from Derived class static-method, static-variable is : " + this.staticVariable);
 };
 
 function extend(base, derived)
 {
     derived.prototype = new base();
-    derived.__proto__ = base;//clone base to derived.__proto__ to use 
-    //但好像变成了克隆而不是继承写法了
+    derived.__proto__ = base;
+    //但好像变成了克隆而不是继承写法了,直接扒下了base的类方法
 }
 
 extend(Base, Derived);
