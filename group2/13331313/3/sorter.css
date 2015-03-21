@@ -1,0 +1,67 @@
+body {
+    height: auto;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+    box-shadow: 20px 20px 50px 7px #BDBDBD;
+}
+
+h1, h2 {
+    font-weight: 900;
+    }
+
+table {    border-collapse: collapse;}
+
+table, th, td {
+	border: 1px solid #B0B9FC;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#staff th {    
+	padding-right: 30px;
+}
+
+thead tr {
+	background-color: #031B7D;
+
+	color: #F8FFFF;
+	text-align: left;
+}
+
+tr {    background-color: white;}
+
+.alternate {    background-color: #DDDDDD;}
+
+th {
+	background-position: right;
+	background-repeat:no-repeat;
+	cursor: pointer;
+    font-weight: 900;
+}
+
+.sortedCol {
+	background-color: #A4B0FC;
+}
+
+.ascend {
+	background-image: url(ascend.png);
+}
+
+.descend {
+	background-image: url(descend.png);
+}
+
+input {
+    margin-bottom:10px;
+}
+    
+.invisible {
+    max-height:0px;
+    }
+    
+td span {
+    color:red;
+}
