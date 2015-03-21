@@ -1,0 +1,38 @@
+table {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+td {
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding-right: 20px;
+}
+
+th {
+	padding-right: 20px;
+}
+
+thead {
+	background-color: #021A7E;
+	color: white;
+	text-align: left;
+}
+
+.AscendTh {
+	background-image: url("ascend.png");
+	background-position: right;
+	background-color: #A7B7DD;
+	background-repeat: no-repeat;
+}
+
+.DescendTh {
+	background-image: url("descend.png");
+	background-position: right;
+	background-color: #A7B7DD;
+	background-repeat: no-repeat;
+}
+
+.even {
+	background-color: #ccc;
+}

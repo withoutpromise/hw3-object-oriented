@@ -1,0 +1,41 @@
+body{
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	padding-top: 30px;
+	box-shadow: 10px 2px 30px gray;
+	padding-left: 1em;
+}
+h2{
+	font-weight: bolder;
+}
+table{
+	text-align: left;
+	line-height: 1.2em;
+	text-indent: 0.5em;
+	font-family: Arial,Verdana,Sans-serif;
+	border-collapse:collapse;
+}
+th{
+	background-color: rgb(2,28,125);
+	color: white;
+	padding-right: 1.5em;
+	position: relative;
+}
+th,td{
+	border: solid 1px #bbbbbb;
+}
+tr:nth-child(even){
+	background-color: rgb(221,221,221);
+}
+.triangle{
+	position: absolute;
+	right: 2px;
+}
+input {
+	margin-top: 0.5em;
+}
+.hightlight{
+	color: red;
+	background-color: yellow;
+}
