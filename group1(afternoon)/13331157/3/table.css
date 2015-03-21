@@ -1,3 +1,7 @@
+/**
+ * FileName: table.css;
+ * Author: linyiting;
+ */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -46,13 +50,18 @@ th {
     background-repeat: no-repeat;
 }
 
-
+/*
+ * input元素样式
+ */
 input {
     font-size: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
+/*
+ * 高亮样式
+ */
 .highLight {
     background-color: yellow;
     font-weight: bolder;

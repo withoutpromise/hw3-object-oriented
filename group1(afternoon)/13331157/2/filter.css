@@ -1,3 +1,7 @@
+/**
+ * FileName: filter.css;
+ * Author: linyiting;
+ */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -37,6 +41,9 @@ input {
     margin-top: 10px;
 }
 
+/*
+ * 高亮样式
+ */
 .highLight {
     background-color: yellow;
     font-weight: bolder;

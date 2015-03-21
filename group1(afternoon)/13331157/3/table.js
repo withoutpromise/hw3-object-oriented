@@ -1,3 +1,7 @@
+/**
+ * FileName: table.js;
+ * Author: linyiting;
+ */
 
 window.onload = function() {
     var table1 = document.getElementById("todo");

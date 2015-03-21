@@ -1,3 +1,8 @@
+/**
+ * FileName: filter.js;
+ * Author: linyiting;
+ */
+
 window.onload = function() {
     var tables = getAllTables();
     makeAllTablesFilterable(tables);
