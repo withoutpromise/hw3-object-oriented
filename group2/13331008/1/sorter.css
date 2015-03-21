@@ -1,0 +1,42 @@
+body {
+	font-family: Arial, Verdana, sans-serif;
+}
+table, th, td {
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px;
+}
+th {
+	background-color: rgb(2, 28, 125);
+	color: white;
+	text-align: left;
+	padding-right: 20px;
+}
+.alternate {
+	background-color: rgb(221, 221, 221);
+}
+.changed1, .changed2 {
+	background-color: rgb(166, 175, 252);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.changed1 {
+	background-image: url("ascend.png");
+}
+.changed2 {
+	background-image: url("descend.png");
+}
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
+} 
+.hide{
+	visibility: hidden;
+}
+input {
+	width: 12em;
+	height: 1.5em;
+	margin: 0 0 0.5em 0.1em;
+}
