@@ -1,0 +1,78 @@
+h1, h2 {
+	font-family: Garamond,Georgia,serif;
+	font-size: 14pt;
+}
+
+table {
+	text-align: left;
+	border-collapse: collapse;
+}
+
+/*设置table的宽度*/
+#todo {
+    width: 470px;
+}
+#staff {
+	width: 380px;
+}
+
+/*设置table边框的颜色，字体左对齐*/
+table, th, td {
+	border: 1px solid #C8C6C4;
+	text-align: left;
+}
+
+th, td {
+	padding-left: 3px;
+}
+
+/*设置thead的字体格式*/
+thead {
+	color: white;
+	background-color: #031B7F;
+	font-size: 10pt;
+	font-family:"Arial Black","黑体","Times New Roman",Georgia,Serif;
+}
+
+tbody {
+	font-family: Arial, serif;
+	text-shadow: 0px 0px 0px rgba(0,0,0,1);
+	font-size: 12pt;
+	background-color: white;
+}
+
+/*table偶数行的格式*/
+table tr:nth-child(even) {
+    background-color: #DFDCDD;
+}
+
+
+/*其他没有进行排序的th的格式*/
+.nochange {
+	color: white;
+	background-color: #031B7F;
+	font-size: 10pt;
+	font-family:"Arial Black","黑体","Times New Roman",Georgia,Serif;
+}
+
+/*向上排序的格式*/
+.Ascend {
+	background-color: #A5AFFC;
+	background-image: url(ascend.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+/*向下排序的格式*/
+.Descend {
+	background-color: #A5AFFC;
+	background-image: url(descend.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+/*查找到的关键字样式*/
+.active {
+	color: red;
+	background-color: yellow;
+}
