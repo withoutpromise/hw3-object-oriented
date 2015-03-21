@@ -44,9 +44,10 @@ function makeAllTablesFilterable(tables) {
             for (var i = 0; i < trs.length; i++) {
                 trs[i].className = "";      // clear classname
                 if (trs[i].innerHTML.search(subText) == -1) {
-                    trs[i].style.display = "none";
+                    // trs[i].style.display = "none";
+                    trs[i].className = "nomatch";
                 } else {
-                    trs[i].style.display = "table-row";
+                    // trs[i].style.display = "table-row";
                     trs[i].className = "match";
                 }
             }
