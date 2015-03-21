@@ -1,0 +1,30 @@
+table {
+	border-collapse:collapse;
+}
+
+thead {
+	background-color:blue;
+}
+
+th, td {
+	border:1px solid;
+}
+
+th {
+	color:white;
+	text-align:left;
+	font-weight:bolder;
+	border-color:white;
+}
+
+td {
+	border-color:gray;
+}
+
+.alternate {
+	background-color:silver;
+}
+
+.highlight {
+	font-weight:bolder;
+}
