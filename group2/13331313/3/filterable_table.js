@@ -58,7 +58,3 @@ function makeAllTablesFilterable(tables) {
     return tables;
 }
 
-window.onload = function() {
-	var tables = getALLTables();
-	makeAllTablesFilterable(tables);
-}
