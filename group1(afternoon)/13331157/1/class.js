@@ -1,3 +1,8 @@
+/**
+ * FileName: table.js;
+ * Author: linyiting;
+ */
+
 window.onload = function() {
     Derived = extend(Base, Derived);
 
