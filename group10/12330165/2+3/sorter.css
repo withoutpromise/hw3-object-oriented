@@ -1,0 +1,40 @@
+table {
+    border: 1px solid #bbbbbb;
+    border-collapse: collapse;
+
+    font-family: Arial;
+}
+
+th {
+    border: 1px solid #bbbbbb;
+    background-color: #000080;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    text-align: left;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td{
+    border: 1px solid #bbbbbb;
+    padding-top:4px;
+    padding-bottom:4px;
+    padding-left:10px;
+    padding-right:10px;
+    text-align:left;
+}
+
+.alternate{
+    background-color:#dddddd;
+}
+
+img {
+    float:right;
+}
+
+.selected {
+    background-color: #bbbbff;
+}

@@ -1,0 +1,62 @@
+/*****************************************
+  In file sort.js
+  Creat by Junjie Li, 2014-10-26
+  Last modified by Junjie Li, 2014-11-4
+  Email: 287150625@qq.com
+*****************************************/
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table,th,td{
+	border: 1px solid grey;
+	border-collapse: collapse;
+	text-align: left;
+	padding: 2px 5px 0;
+}
+
+table::before {
+	content: 
+}
+
+th {
+	color: white;
+	background-color: rgba(0,0,255,1);
+	font-weight: bolder;
+	padding-right: 30px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.alternate {
+	background-color: #C0C0C0;
+}
+
+.ascend {
+	background-image: url(ascend.png);
+	background-color: rgba(0,0,255,0.3);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.descend {
+	background-image: url(descend.png);
+	background-color: rgba(0,0,255,0.3);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.substring {
+	background-color: yellow;
+}
+
+.filter {
+	width: 270px;
+	color: rgba(56,56,56,0.6);
+}

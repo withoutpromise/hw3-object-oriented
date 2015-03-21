@@ -1,0 +1,40 @@
+body {
+	font-weight: bold;
+}
+th {
+	background-color: #000088;
+	color: #FFFFFF;
+	text-align: left;
+	padding:.3rem 2rem .3rem .5rem;
+	position: relative;
+	font-size: 1rem;
+
+}
+
+table {
+	border-collapse: collapse;
+	font-family: Arial,Verdana,Sans-serif;
+
+}
+
+table, td, th{
+	border: 1px solid #AAAAAA;
+}
+
+tr:nth-child(even) {
+	background-color: #DDDDDD;
+}
+
+img {
+	position: absolute;
+	margin-top: -18px;
+	right: 8px;
+	display: none;
+}
+
+.highlight {
+	background-color: yellow;
+}
+.hide{
+	visibility: hidden;
+}
