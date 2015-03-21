@@ -28,7 +28,9 @@ th {
     background-color: rgba(221, 221, 221, 1);
 }
 
-
+/*
+ * input元素样式
+ */
 input {
     font-size: 20px;
     margin-bottom: 10px;
