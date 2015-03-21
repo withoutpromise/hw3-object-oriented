@@ -1,0 +1,45 @@
+table, th, td{
+    border: gray solid 2px;
+    border-collapse: collapse;
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+th {
+    color: white;
+}
+
+.evencolor {
+    background-color: rgb(212, 212, 212);
+}
+
+.thunclicked {
+    background-color: rgb(0, 10, 100);
+}
+
+.thclicked {
+    background-color: rgb(145, 155, 255);
+}
+
+.ascend {
+    background-image: url('ascend.png');
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.descend {
+    background-image: url('descend.png');
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.nohidden {
+    display: table-row;
+}
+
+.hidden {
+    display: none;
+}
