@@ -1,0 +1,64 @@
+table, th, td {
+    border: 1px solid rgba(194, 194, 194, 1);
+    border-spacing: 0;
+    font-family: "Helvetica neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-weight: bold;
+}
+
+th {
+    background-color: rgba(0, 0, 128, 1);
+    text-align: left;
+    padding-left: 5px;
+    color: white;
+}
+
+td {
+    font-weight: normal;
+}
+
+tr {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+#todo > thead > tr > th {
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+#todo > tbody > tr > td {
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+#staff > thead > tr > th {
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+#staff > tbody > tr > td {
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+tr:nth-child(2n) {
+    background-color: rgba(221, 221, 221, 1);
+}
+
+.ascend {
+    background-image: url("ascend.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.descend {
+    background-image: url("descend.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.input-word {
+    margin: 5px;
+}
