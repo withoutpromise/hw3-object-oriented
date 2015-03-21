@@ -1,0 +1,49 @@
+table {
+	border-spacing: 0px;
+	border-right: 1px solid rgb(128, 128, 128);
+	border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+td, th {
+	border-left: 1px solid rgb(128, 128, 128);
+	border-top: 1px solid rgb(128, 128, 128);
+}
+
+tr {
+	text-align: left;
+}
+
+#staff th {
+	width: 7em;
+}
+
+#staff th:nth-child(3) {
+	width: 9em;
+}
+
+th {
+	color: white;
+	font-family: '微软雅黑', Georgia, Serif;
+	font-weight: bold;
+	background-color: rgb(0, 0, 160);
+}
+
+th:hover {
+	background-color: rgb(128, 128, 255);
+}
+
+td {
+	font-family: '微软雅黑', Georgia, Serif;
+}
+
+.alternate {
+	background-color: rgb(192, 192, 192);
+}
+
+img {
+	float: right;
+}
+
+.highlight {
+	color: red;
+}
