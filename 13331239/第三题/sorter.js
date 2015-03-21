@@ -90,7 +90,7 @@ function makeFilterable (sTableid)
 		if (s.length != 0)
 		{
 			for (var i = 1; i < oTable.rows.length; i++) {
-				if (oTable.rows[i].innerText.match(s))
+				if (oTable.rows[i].innerHTML.match(s))
 					oTable.rows[i].style.display = '';
 				else
 					oTable.rows[i].style.display = "none";
@@ -110,7 +110,7 @@ function makeFilterable (sTableid)
 		if (s.length != 0)
 		{
 			for (var i = 1; i < oTable.rows.length; i++) {
-				if (oTable.rows[i].innerText.match(s))
+				if (oTable.rows[i].innerHTML.match(s))
 				{
 					oTable.rows[i].style.display = '';
 				}
@@ -135,7 +135,7 @@ function HighLight(str, type)
 	var rep = document.getElementById(type);
 	for (var i = 1; i < rep.rows.length; i++)
 	{
-		if(rep.rows[i].innerText.match(str))
+		if(rep.rows[i].innerHTML.match(str))
 			rep.rows[i].innerHTML = rep.rows[i].innerHTML.replace(rex, '<font color=red>' + str + '</font>')
 	};
 }
@@ -149,8 +149,8 @@ function Reset(typeId)
 	{
 		for (var j = 0; j < res.rows[i].cells.length; j++)
 		{
-			var temp = res.rows[i].cells[j].innerText;
-			res.rows[i].cells[j].innerText = temp;
+			var temp = res.rows[i].cells[j].innerHTML.replace(/<.+?>/gim, '');
+			res.rows[i].cells[j].innerHTML = temp;
 		}
 			
 	};
