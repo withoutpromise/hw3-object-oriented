@@ -1,0 +1,40 @@
+body {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+table {
+	border-collapse: collapse;
+	text-align: left;
+}
+table td,table th {
+	border:1px solid #ccc;
+	padding-left: 2px;
+}
+#todo th {
+    width: 165px;
+}
+#staff th {
+	width:132px;
+}
+.alternate {
+	background-color: #ddd;
+}
+table thead {
+	background-color: #021A7E;
+	color: white;
+}
+.down {
+	background-image: url(descend.png);
+}
+.up {
+	background-image: url(ascend.png);
+}
+.up, .down {
+	background-color: #A4AFFC;
+	background-position: right;
+	background-repeat: no-repeat;
+}
+.heightLight {
+	color:red;
+	font-weight: bold;
+	background-color: black;
+}
