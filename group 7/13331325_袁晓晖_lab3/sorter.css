@@ -1,0 +1,19 @@
+thead {
+    background-color: #00008b;
+    color: white;
+}
+td {
+    border:solid #cccccc;
+    border-width:1px 1px 1px 1px;
+}
+th {
+    border:solid #cccccc;
+    border-width:1px 1px 1px 1px;
+}
+table {
+    text-align: left;
+    border-collapse:collapse;
+}
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+}

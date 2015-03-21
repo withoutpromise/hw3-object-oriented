@@ -1,0 +1,51 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	border: solid #BDC2BE 1px;
+	width: 180px;
+	height: 24px;
+	text-align: left;
+}
+
+th {
+	color: white;
+	background-color: #031B7F;
+	background-repeat: no-repeat;
+	background-position-x: 158px;
+	background-position-y: 4px;
+}
+
+.ascend {
+	background-color: #A4B0FC;
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position-x: 158px;
+	background-position-y: 4px;
+}
+
+.descend {
+	background-color: #A4B0FC;
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position-x: 158px;
+	background-position-y: 4px;
+}
+
+.alternate {
+	background-color: #DDD;
+}
+
+.hidden {
+	display: none;
+}
+
+.keyword {
+	color: red;
+	font-weight: bold;
+}
