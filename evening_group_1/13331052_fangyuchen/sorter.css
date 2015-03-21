@@ -1,0 +1,29 @@
+table {
+	border :1px solid #ccc;
+	border-collapse: collapse;
+}
+
+table th {
+	border:1px solid #ccc;
+	background-color: #220088;
+	color: white;
+	cursor: pointer;
+}
+
+table td {
+	border:1px solid #ccc;
+}
+
+.second_row {
+	background-color: #DDDDDD;
+}
+
+.sortUp {
+	background: url(ascend.png) no-repeat right;	
+	background-color:#C0D9D9;
+}
+
+.sortDown {
+	background: url(descend.png) no-repeat right;	
+	background-color:#C0D9D9;
+}
