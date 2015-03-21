@@ -1,0 +1,40 @@
+table, td, th {
+    border:  solid 1px #c1c1c1;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 2px 3px;
+}
+
+thead {
+    background-color: #031b7f;
+    color: #fff;
+    font-weight: 900;
+}
+
+tbody>tr[even] {
+    background-color: #ddd;
+}
+
+th {
+    padding-right: 18px;
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+th[asc='true'], th[asc='false'] {
+    background-color: #a4b0fc;
+    background-repeat: no-repeat;
+    background-position: right 40%;
+}
+
+th[asc='true'] {
+    background-image: url(ascend.png);
+}
+
+th[asc='false'] {
+    background-image: url(descend.png);
+}
