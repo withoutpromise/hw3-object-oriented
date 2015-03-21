@@ -1,0 +1,47 @@
+body {
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+table,th,td{
+	border: 2px solid #A0A0A0;
+	border-collapse: collapse;
+	text-align: left;
+	padding: 2px 5px 0;
+}
+
+th {
+	color: white;
+	background-color: #000066;
+	font-weight: bolder;
+	padding-right: 30px;
+}
+
+.alternate {
+	background-color: #E0E0E0;
+}
+
+.ascend {
+	background-image: url(ascend.png);
+	background-color: #99CCFF;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.descend {
+	background-image: url(descend.png);
+	background-color: #99CCFF;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.filter_words  {
+	background-color: yellow;
+}
+
+input {
+	width: 130px;
+}
