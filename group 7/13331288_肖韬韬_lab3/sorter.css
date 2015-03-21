@@ -1,0 +1,49 @@
+table, th, td {
+    font-family: Arial;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    width: 600px;
+}
+
+th {
+    background-color: #021C7B;
+    color: white;
+    cursor: pointer;
+}
+h1, h2 {
+    text-align: center;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ascend {
+    background-image: url(ascend.png);
+    background-color: #A4ACFC;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.descend {
+    background-image: url(descend.png);
+    background-color: #A4ACFC;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+form {
+    text-align: center;
+}
+
+.highlight span{
+    background-color: orange;
+    font-style: italic;
+    /*font-size: 16pt;*/
+}
+
+.alternate {
+    background-color: #ccc;
+}

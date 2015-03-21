@@ -1,0 +1,31 @@
+table, th, td {
+	border: 1px solid #aaa;
+	border-collapse: collapse;
+}
+
+th {
+	background-color: #00f;
+	padding-right: 40px;
+	text-align: left;
+}
+
+tr:nth-child(even) {background: #fff}
+tr:nth-child(odd) {background: #aaa}
+
+.ascend {
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: rgb(146, 153, 254);
+}
+
+.descend {
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: rgb(146, 153, 254);
+}
+
+.hide {
+	display: none;
+}
