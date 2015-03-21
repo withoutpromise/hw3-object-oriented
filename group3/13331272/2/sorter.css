@@ -1,0 +1,42 @@
+body {
+	font-family: "Times New Roman";
+}
+td, th {
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table {
+	font-style: bold;
+	font-family: "黑体";
+}
+th  {
+	color: white;
+	background-color: rgb(3, 27, 127);
+	
+	background-repeat: no-repeat;
+	background-position: 98%;
+	text-align: left;
+}
+#staff > thead >  tr  > th {
+	width: 150px;
+}
+
+ th:hover {
+ 	background-color: rgb(166,175,252);
+}
+
+span {
+	color: rgb(1,53,130);
+	font-style: bold;
+	background-color: yellow;
+}
+
+.alternate {
+	background-color: rgb(221,221,221);
+}
