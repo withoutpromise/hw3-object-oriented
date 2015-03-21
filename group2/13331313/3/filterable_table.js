@@ -2,6 +2,7 @@
 Ҷ�㿭
 13331313
 */
+var filterOn = false;
 
 function getALLTables() {
 	return document.getElementsByTagName("table");
@@ -47,8 +48,10 @@ function tableFilter(table, that) {
 }
 
 function makeAllTablesFilterable(tables) {
-	for (var i = 0; i < tables.length; i++) {
-		makeTableFilterable(tables[i]);
-	}
+    if (!filterOn)
+        for (var i = 0; i < tables.length; i++) {
+            makeTableFilterable(tables[i]);
+        }
+    filterOn = true;
     return tables;
 }
