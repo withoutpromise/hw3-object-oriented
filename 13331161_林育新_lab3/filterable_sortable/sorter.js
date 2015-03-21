@@ -73,49 +73,27 @@ function makeFilterable(tables) {
 }
 
 function filterable() {
-    var trRows = this.nextSibling.getElementsByTagName("tr");
+    var tmp_table = this.nextSibling;
+    var trRows = tmp_table.getElementsByTagName("tr");
     for (var i = 1; i < trRows.length; i++) {
         var is_found = false;
         for (var j = 0; j < trRows[i].cells.length; j++) {
             var input = this.value;
-            var td_content = ensureNoDOM(trRows[i].cells[j].innerHTML);
+            trRows[i].cells[j].innerHTML = trRows[i].cells[j].innerHTML.replace(/<b>|<\/b>/g, "");
+            var td_content = trRows[i].cells[j].innerHTML;
+
             var pos = td_content.toLowerCase().indexOf(input.toLowerCase());
 
-            if (pos != -1) {
+            if (pos != -1 && input) {
                 is_found = true;
-                var start_content = "";
-                var strong_content = "";
-                var rest_content = "";
+                var strong_content = td_content.slice(pos, pos+input.length);
 
-                for (var k = 0; k < pos; k++) {
-                    start_content += td_content.charAt(k);
-                }
-
-                for (var k = pos; k < pos + input.length; k++) {
-                    strong_content += td_content.charAt(k);
-                }
-
-                for (var k = pos + input.length; k < td_content.length; k++) {
-                    rest_content += td_content.charAt(k);
-                }
-
-                trRows[i].cells[j].innerHTML = start_content + "<b>" + strong_content + "</b>" + rest_content;
+                var reg = new RegExp(input, "gi");
+                strong_content = "<b>" + strong_content + "</b>";
+                trRows[i].cells[j].innerHTML = td_content.replace(reg, strong_content);
             }
         }
         if (trRows[i].classList.contains('hidden')) trRows[i].classList.remove('hidden');
-        if (is_found == false) trRows[i].classList.add('hidden');
+        if (is_found == false && input) trRows[i].classList.add('hidden');
     }
-}
-
-//不用此函数，在标签内，会将<b>当做字符去处理了，可搜寻
-function ensureNoDOM(content) {
-    var newcontent = "";
-    for (var i = 0; i < content.length; i++) {
-        if (content.charAt(i) == '<') {
-            while (content.charAt(i) != '>') i++;
-        } else {
-            newcontent += content.charAt(i);
-        }
-    }
-    return newcontent;
 }
