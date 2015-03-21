@@ -1,0 +1,66 @@
+/*kin_sang
+   software process improvement
+*/
+
+body {
+	font-family: "STHeiti" ,"Microsoft YaHei", serif;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+thead > tr {
+    color: #fff;
+    background-color: #021c7d;
+}
+
+th {
+    height: 26px;
+    cursor: pointer;
+}
+
+th, td {
+    position: relative;
+    padding-right: 30px;
+    padding-left: 5px;
+    text-align: left;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+th.arrowDown, th.arrowUp {
+    background-color: #a6aefc;
+}
+
+th.arrowDown:after,
+th.arrowUp:after {
+    position: absolute;
+    top: 0;
+    right: 5px;
+
+    width: 20px;
+    height: 26px;
+
+    content: '';
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+
+th.arrowDown:after {
+    background-image: url(descend.png);
+}
+
+th.arrowUp:after {
+    background-image: url(ascend.png);
+}
+.hidden {
+    display: none;
+}

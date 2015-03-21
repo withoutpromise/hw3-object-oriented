@@ -1,0 +1,43 @@
+table {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+table, tr, td, th {
+  border: 1px #b3bfd0 solid;
+  text-align: left;
+  border-collapse:collapse;
+}
+
+th {
+  background-color: #041a7a;
+  color: white;
+  font-weight: bold;
+  padding-right: 16px;
+}
+
+td {
+  background-color: white;
+  color: black;
+}
+
+.alternate td {
+  background-color: #dddddd;
+}
+
+.ascend, .descend {
+  background-color: #a4b0fd;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.ascend {
+  background-image: url("ascend.png");
+}
+
+.descend {
+  background-image: url("descend.png");
+}
