@@ -1,0 +1,26 @@
+body {
+	background-color: #eeeeee;
+}
+tbody tr:nth-child(odd) {
+	background-color: white;
+}
+tbody tr:nth-child(even) {
+	background-color: #cccccc;
+}
+th {
+	background-color: rgb(2,27,127);
+	color: white;
+	font-family:Arial,Verdana,Sans-serif;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+th img {
+	float: right;
+}
+.blue {
+	background-color: rgb(163,177,252);
+}
+td {
+	padding-left: 5px;
+	padding-right: 5px;
+}
