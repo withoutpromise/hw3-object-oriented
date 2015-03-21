@@ -1,0 +1,36 @@
+/*
+  ekuri wrote this sorter.css on 2015-3-11
+  this css try to control the style of a table
+  laterly written on 2015-3-12
+*/
+
+table {
+	border:solid 1px;
+	border-collapse:collapse;
+}
+
+table td {
+	padding:4px;
+	border:solid 1px;
+	text-align:left;
+}
+
+table th {
+	padding:4px;
+	border:solid 1px;
+	background-color:#000077;
+	color:white;
+	text-align:left;
+}
+
+table th:hover {
+	background-color:#7777FF;
+}
+
+table tr:nth-child(even) td {
+	background-color:#CCCCCC;
+}
+
+b {
+	color:red;
+}
