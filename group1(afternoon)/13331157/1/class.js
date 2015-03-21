@@ -60,6 +60,7 @@ function extend(base, derived) {
 	inher(Derived.prototype, base.prototype, derived.prototype);  // 获取base, derived的实例方法
     return Derived;
 };
+
 function inher(obj, base, derived) {
 	for (var key in derived) {
         obj[key] = derived[key];
