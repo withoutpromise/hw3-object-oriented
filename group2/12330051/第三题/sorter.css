@@ -1,0 +1,44 @@
+ th {
+border:solid 1px #DDDDDD;
+background-color:rgba(0,0,128,1);
+text-align:left;
+color:white;
+padding:3px;
+padding-right:5px;
+font-family:Arial,Verdana,Sans-serif;
+}
+
+ td {
+border:solid 1px #DDDDDD;
+padding:3px;
+padding-right:5px;
+font-family:Arial,Verdana,Sans-serif;
+}
+
+tr:nth-of-type(odd){ background:white;}
+tr:nth-of-type(even){ background:#DDDDDD;}
+
+table {
+border-collapse:collapse;
+}
+
+.SortDescend  {
+background-image:url(descend.png);
+background-repeat:no-repeat;
+background-position:right center;
+background-color:rgba(0,0,128,0.5);
+}
+
+.SortDescCend td {
+background-color:expression(parentElement.rowIndex%2==0?'#DDDDDD':'#E6E6CC');  
+}
+.SortAscend {
+background-image:url(ascend.png);
+background-repeat:no-repeat;
+background-position:right center;
+background-color:rgba(0,0,128,0.5);
+}
+
+.Focus {
+background-color:yellow;
+}
