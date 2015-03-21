@@ -1,0 +1,36 @@
+
+body{
+	font-family: Arial;
+}
+
+th, .thread{
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: #021A7E;
+	font-weight: bold;
+	color: white;
+	text-align: left;
+	padding-right: 25px;
+}
+
+th, .thread:hover{
+	cursor: pointer;
+}
+
+td{
+	padding-right: 10px;
+}
+
+th, td{
+	border: 1px solid #ccc;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+#matched{
+	color: red;
+	font-weight: bold;
+	font-style: italic;
+}
