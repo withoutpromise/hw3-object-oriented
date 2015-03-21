@@ -1,0 +1,12 @@
+table,th,td{
+	border: 1px solid gray;
+}
+table{
+	border-collapse: collapse;
+	font-weight: bold;
+}
+thead{
+	color: white;
+	background: #021A7E;
+	text-align: left;
+}
