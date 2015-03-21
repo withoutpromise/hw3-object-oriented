@@ -1,8 +1,8 @@
 function Base(instanceVar) {
-    this.instanceVariable = instanceVar;
+    this.instanceVariable = instanceVar;  //每个实例一个
 }
 
-Base.staticVariable = 'Base';
+Base.staticVariable = 'Base';  //静态变量 （唯一）
 
 Base.staticMethod = function() {
     console.log("This is from Base class static-method, static-variable is: " + this.staticVariable);
@@ -12,18 +12,25 @@ Base.prototype.instanceMethod = function() {
     console.log("This is from Base class instance-method, instance-variable is: " + this.instanceVariable);
 }
 
+Derived.staticMethod = function() {
+    console.log("This is from Derived class static-method, static-variable is: " + this.staticVariable);
+}
+
 function Derived(instanceVar) {
     this.instanceVariable = instanceVar;
 }
 
 Derived.staticVariable = 'Derived';
 
-Derived.staticMethod = function() {
-    console.log("This is from Derived class static-method, static-variable is: " + this.staticVariable);
-}
-
 Derived.prototype.instanceMethod = function() {
     console.log("This is from Derived class instance-method, instance-variable is: " + this.instanceVariable)
+}
+
+function link(a, b) {
+    return function() {
+        a.call(this);
+        b.call(this);
+    }
 }
 
 function extend(base, derived) {
@@ -55,15 +62,7 @@ function extend(base, derived) {
     }
 }
 
-function link(a, b) {
-    return function() {
-        a.call(this);
-        b.call(this);
-    }
-}
-
 extend(Base, Derived);
-
 console.log("this is the test 1");
 example = new Derived('example');
 Derived.staticMethod();
