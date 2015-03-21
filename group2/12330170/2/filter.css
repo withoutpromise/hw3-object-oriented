@@ -1,0 +1,51 @@
+table {
+	border: 1px solid #bbbbbb;
+	border-collapse: collapse;
+	
+	font-family: Arial;
+}
+
+th {
+	border: 1px solid #bbbbbb;
+	background-color: #000080;
+    padding-top: 4px;
+	padding-bottom: 4px;
+    padding-left: 8px;
+	padding-right: 8px;
+	min-width: 141px;
+	
+    text-align: left;
+	color: #ffffff;
+	font-weight: bold; 
+}
+
+td {
+	border: 1px solid #bbbbbb;
+    padding-top: 4px;
+	padding-bottom: 4px;
+    padding-left: 8px;
+	padding-right: 8px;
+	
+    text-align: left;
+}
+
+img {
+	float: right;
+}
+
+.alternate {
+    background-color: #dddddd;
+}
+
+.clicked {
+	background-color: #bbbbff;
+}
+
+span {
+	font-weight: bold;
+	color: red;
+}
+
+.hide {
+	display: none;
+}
