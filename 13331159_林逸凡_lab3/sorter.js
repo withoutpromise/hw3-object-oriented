@@ -12,20 +12,26 @@ var getAllTables = function() {
 
 //使所有table变成sortable
 var makeAllTableSortable = function(tables) {
-	for (var e = 0; e < tables.length; e++) {
-		if (tables[e].getElementsByTagName("th").length != 0) {
-			var tableHeads = tables[e].getElementsByTagName("th");
-			for (var i = 0; i < tableHeads.length; i++) {
-				tableHeads[i].classList.add("tHead");
-				tableHeads[i].addEventListener('click', changeStatus);
-			}
-		} else {
-			for (var i = 0; i < tables[e].rows[0].cells.length; i++) {
-				tables[e].rows[0].cells[i].classList.add("tHead")
-				tables[e].rows[0].cells[i].addEventListener('click', changeStatus);
-			}
+	for (var i = 0; i < tables.length; i++) {
+		makeSortable(tables[i]);
+	}
+}
+
+//使table变成sortable
+var makeSortable = function(table) {
+	if (table.getElementsByTagName("th").length != 0) {
+		var tableHeads = table.getElementsByTagName("th");
+		for (var i = 0; i < tableHeads.length; i++) {
+			tableHeads[i].classList.add("tHead");
+			tableHeads[i].addEventListener('click', changeStatus);
+		}
+	} else {
+		for (var i = 0; i < table.rows[0].cells.length; i++) {
+			table.rows[0].cells[i].classList.add("tHead")
+			table.rows[0].cells[i].addEventListener('click', changeStatus);
 		}
 	}
+	return table;
 }
 
 //改变表格升降序的状态
@@ -97,17 +103,19 @@ var swap = function(row_a, row_b) {
 //使所有table变成filtable
 var makeAllTableFiltable = function(tables) {
 	for (var i = 0; i < tables.length; i++) {
-		makeTableFiltable(tables[i]);
+		makeFiltable(tables[i]);
 	}
 }
 
-var makeTableFiltable = function(table) {
+//使table变成filtable
+var makeFiltable = function(table) {
 	var form = document.createElement('FORM');
 	var input = document.createElement('INPUT');
 	input.placeholder = "input here";
     input.addEventListener("keyup", Filter);
 	table.appendChild(form);
 	table.getElementsByTagName('form')[0].appendChild(input);
+	return table;
 }
 
 //使table回到初始状态
