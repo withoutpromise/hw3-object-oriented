@@ -1,0 +1,21 @@
+table {
+	border-collapse: collapse;
+}
+th {
+	background-color: rgb(2,27,127);
+	text-align: left;
+	font: bold;
+	color: white;
+	border: 1px solid white;
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 15px;
+}
+td {
+	border: 1px solid rgb(194,194,194);
+}
+.alternate {
+	background-color: rgb(221, 221, 221);
+}
+

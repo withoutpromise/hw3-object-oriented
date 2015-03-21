@@ -1,0 +1,50 @@
+/**
+ * FileName: filter.css;
+ * Author: linyiting;
+ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/**
+ * 表格样式
+ */
+table, tr, th, td {
+	border: 1px solid gray;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+	text-align: left;
+	background-color: rgba(0, 0, 128, 1);
+	color: white;
+	font-style: bolder;
+    padding-right: 20px;
+}
+
+/**
+ * 表格的偶数行，背景颜色变为灰色
+ */
+.alternate {
+    background-color: rgba(221, 221, 221, 1);
+}
+
+/*
+ * input元素样式
+ */
+input {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/*
+ * 高亮样式
+ */
+.highLight {
+    background-color: yellow;
+    font-weight: bolder;
+}
