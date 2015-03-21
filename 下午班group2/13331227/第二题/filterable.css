@@ -1,0 +1,37 @@
+
+table {
+	border-collapse:collapse;
+}
+
+th{
+	background-repeat: no-repeat;
+	background-position: right;
+	cursor:pointer;
+	font-weight: bolder;
+	text-align: left;
+	background-color: #00008B;
+	color: white;
+}
+#staff th {
+	padding-right: 30px;
+}
+
+.alternate {
+	background-color: #C8C8C8;
+}
+.even{
+	background-color: #C8C8C8;
+}
+td, tr, th{
+	padding-left: 3px;
+	padding-right: 5px;
+	border : 1px solid #909090;
+}
+
+
+
+input {
+	overflow:hidden;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+}
