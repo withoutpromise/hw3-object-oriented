@@ -147,6 +147,39 @@ function createFilterInputBox(table) {
 
 function addEventToFilter(inputFilter, table) {
     inputFilter.addEventListener('change', function() {
-        
+        var word = inputFilter.value;
+        if (word !== '') {
+            screenWordInTable(word, table);
+        }
     });
 }
+
+function screenWordInTable(word, table) {
+    var tableBody = table.getElementsByTagName('tbody')[0];
+    var tableRows = tableBody.getElementsByTagName('tr');
+    for (var i = 0; i < tableRows.length; i++) {
+        dealTableRowByWord(word, tableRows[i]);
+    }
+}
+
+function dealTableRowByWord(word, tableRow) {
+    var tableCells = tableRow.getElementsByTagName('td');
+    var matchFlag = false;
+    for (var i = 0; i < tableCells.length; i++) {
+        var textNode = tableCells[i].innerHTML;
+        var position = textNode.search(word); 
+        if (position !== -1) {
+            matchFlag = true;
+            hightLightTheWord(word, position, tableCells[i]);
+        }
+    }
+    if (matchFlag === false) {
+        tableRow.style.display = 'none';
+    } else {
+        tableRow.style.display = 'table-row';
+    }
+}
+
+function hightLightTheWord(word, position, tableCell) {
+    return;
+} 
