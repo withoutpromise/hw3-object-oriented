@@ -1,0 +1,25 @@
+table {
+	font-family: Georgia;
+	font-weight: 700;
+}
+
+table thead {
+	background-color: #0000AA;
+	color: white;
+	text-align: left;
+}
+
+table, th, td{
+	border: 1.7px solid #AAAAAA;
+	border-collapse: collapse;
+}
+
+th, td {
+	text-indent: 5px;
+	padding-right: 30px;
+}
+
+.emphasize {
+	color: #FF0000;
+	font-weight: 900;
+}
