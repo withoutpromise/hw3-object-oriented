@@ -1,0 +1,95 @@
+table
+{
+	border-collapse: collapse;
+}
+#todo
+{
+	width: 520px;
+}
+table ,th, td
+{
+	border: 1px solid #d9d6c3;
+	text-align: left;
+}
+
+th
+{
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+thead
+{
+	background-color: #2a5caa;
+	color: white;
+	font-weight: bolder;
+}
+
+td
+{
+	font-weight: bold;
+	font-size: 100%;
+	color: black;
+}
+tr.alternate
+{
+	background-color: #d9d6c3;
+}
+
+thead th:hover
+{
+	background-color: #4e72b8;
+	cursor: pointer;
+}
+table#staff
+{
+	position: absolute;
+	top:280px;
+	left:10px;
+	width: 520px;
+}
+#t2
+{
+	position: absolute;
+	top: 220px;
+	left: 10px;
+}
+#search1
+{
+	position: absolute;
+	top: 127px;
+	left: 550px;
+}
+
+#search2
+{
+	position: absolute;
+	top: 280px;
+	left: 550px;
+}
+
+#sch1
+{
+	position: absolute;
+	top: 150px;
+	left: 650px;
+}
+#reset1
+{
+	position: absolute;
+	top: 150px;
+	left: 550px;
+}
+#sch2
+{
+	position: absolute;
+	top: 303px;
+	left: 650px;
+}
+#reset2
+{
+	position: absolute;
+	top: 303px;
+	left: 550px;
+}
+
