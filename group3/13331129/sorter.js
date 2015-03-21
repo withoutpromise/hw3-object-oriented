@@ -82,7 +82,15 @@ function sortTable(k, col, asc) {
 		if (t[0].getElementsByTagName("tr")[0].getElementsByTagName("th").length > 0) {
 			tt = 1;
 		}
+		var display = new Array();
 		var rowsLength = rows.length;
+		for (var i = tt; i < rowsLength; ++i) {
+			if (rows[i].style.display == "none") {
+				display[i - tt] = 0;
+			} else {
+				display[i - tt] = 1;
+			}
+		}
 		var temp = new Array();
 		for (var i = tt; i < rowsLength; ++i) {
 			cells = rows[i].cells;
@@ -92,17 +100,35 @@ function sortTable(k, col, asc) {
 				temp[i - tt][j] = cells[j].innerHTML;  //用二元数组存储tbody中的表格
 			}
 		}
-		//Array自带排序
-		temp.sort( function(x, y) {
-            if (x[col] > y[col]) {
-            	return (asc == 1) ? 1 : -1;
-            } else {
-                return (asc == 1) ? -1 : 1;
-            }
-        });
-         for (i = tt; i < rowsLength; i++) {
+		for (var i = rowsLength - 1; i > 0; --i) {
+			for (var j = 0; j < i; ++j) {
+				if (temp[j][col] > temp[j + 1][col] && asc == 1) {   //两个功能table会很繁琐，数组做的缺陷。
+					for (var k = 0; k < cellsLength; ++k) {
+						var ttt = temp[j][k];
+						temp[j][k] = temp[j + 1][k];
+						temp[j + 1][k] = ttt;
+					}
+					ttt = display[j];
+					display[j] = display[j + 1];
+					display[j + 1] = ttt; 
+				} else if (temp[j][col] < temp[j + 1][col] && asc != 1) {
+					for (var k = 0; k < cellsLength; ++k) {
+						var ttt = temp[j][k];
+						temp[j][k] = temp[j + 1][k];
+						temp[j + 1][k] = ttt;
+					}
+					ttt = display[j];
+					display[j] = display[j + 1];
+					display[j + 1] = ttt; 
+				}
+			}
+		}
+
+        for (i = tt; i < rowsLength; i++) {
                 rows[i].innerHTML = "<td>" + temp[i - tt].join("</td><td>") + "</td>";
-         }
+                if (display[i] == 0) rows[i].style.display = "none";
+                if (display[i] == 1) rows[i].style.display = "table-row";
+        }
     }
 
 function styleChange(thClicked, table) {
