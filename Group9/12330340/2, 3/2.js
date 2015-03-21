@@ -15,12 +15,17 @@ function makeAllTablesFilterable(tables) {
     	tableRow[i] = tables[i].getElementsByTagName("tr");
     }
 
+    var original = [];
+    for (var i = 0; i < tables.length; i++)
+        original[i] = tables[i].innerHTML;
+
     var button = document.getElementsByTagName("button");
     var input = document.getElementsByTagName("input");
 
     for (var i = 0; i < button.length; i++) {
         button[i].onclick = function(i) {
             return function() {
+                tables[i].innerHTML = original[i];
                 var str = input[i].value;
                 Filter(tableRow[i], str, tables[i]);
             }
@@ -57,9 +62,6 @@ function Filter(rows, str, table) {
     }
 
     for (var i = 0; i < removed.length; i++) {
-        if  (i != 0)
-            table.getElementsByTagName("tbody")[0].removeChild(rows[i-1]);
-        else
-            table.getElementsByTagName("tbody")[0].removeChild(rows[i]);
+        table.getElementsByTagName("tbody")[0].removeChild(rows[removed[i] - i]);
     }
 }
