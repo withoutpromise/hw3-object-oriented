@@ -1,0 +1,45 @@
+body {
+	font-family:  Arial, sans-serif;
+}
+
+table {
+	border: 2px solid #BAC3C3;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+thead {
+	border: 1px solid #BAC3C3;
+	background-color: #041987;
+	color: #FFFFFF;
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid #BAC3C3;
+	background-color: #FFFFFF;
+	color: black;
+	padding: 2px 2px 2px 2px;
+}
+
+th {
+	padding-right: 15px;
+}
+
+.upper {
+	background-color: #A4B1FB;
+	background-image: url(ascend.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.down {
+	background-color: #A4B1FB;
+	background-image: url(descend.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.highlight {
+	background-color: yellow;
+}
