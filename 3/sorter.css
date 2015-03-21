@@ -24,10 +24,13 @@ table th {
 }
 
 table th:hover {
-	background-color:#0000FF;
+	background-color:#7777FF;
 }
 
-
-.alternate {
+table tr:nth-child(even) td {
 	background-color:#CCCCCC;
+}
+
+b {
+	color:red;
 }

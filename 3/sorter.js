@@ -1,7 +1,6 @@
 /*
-  ekuri wrote this sorter.js on 2015-3-11
-  this js try to sort the data of a table to ascend or descend order
-  laterly written on 2015-3-13
+  ekuri create this sorter.js on 2015-3-11
+  laterly written on 2015-3-21
 */
 
 window.onload = function () {
@@ -14,18 +13,6 @@ function getAllTables() {
 	return document.getElementsByTagName("table");
 }
 
-function makeFilterable(targetTable) {
-	var textInput = document.createElement("input");
-		textInput.type = "text";
-		targetTable.appendChild(textInput);
-		textInput.onkeydown = function(textInput) {
-			return function() {
-				filterTable(textInput);
-			}
-		}(textInput);
-	return targetTable;
-}
-
 var tablesData = new Array();
 function makeAllTablesFilterable(tables) {
 	for (var count = 0; count < tables.length; count++) {
@@ -34,34 +21,28 @@ function makeAllTablesFilterable(tables) {
 	}
 }
 
-function initTable(targetTable) {
-	var tables = getAllTables();
-	for (var count = 0; count < tables.length; count++) {
-		if (targetTable == tables[count])
-			updateTableData(targetTable, tablesData[count]);
-	}
-}
-
-function filterTable(targetInput) {
-	if (event.keyCode == 13) {
-		initTable(targetInput.parentNode);
-		var dataArray = getArray(targetInput.parentNode);
-		for (var count = dataArray.length - 1; count >= 0; count--) {
-			var temp = 0;
-			for (; temp < dataArray[count].length; temp++) {
-				if (dataArray[count][temp].match(targetInput.value))
-					break;
-			}
-			if (temp == dataArray[count].length)
-				targetInput.parentNode.deleteRow(count + 1);
-		}
-	}
-}
-
 function makeAllTablesSortable(tables) {
 	for (var count = 0; count < tables.length; count++) {
 		makeSortable(tables[count]);
 	}
+}
+
+function makeFilterable(targetTable) {
+	var textInput = document.createElement("input");
+		textInput.type = "text";
+		targetTable.appendChild(textInput);
+		textInput.onkeydown = function(textInput) {
+			return function() {
+				filterTable(textInput);
+				filterTable(textInput, true);
+			}
+		}(textInput);
+		textInput.onblur = function(textInput) {
+			return function() {
+				filterTable(textInput, false);
+			}
+		}(textInput);
+	return targetTable;
 }
 
 function makeSortable(targetTable) {
@@ -73,6 +54,37 @@ function makeSortable(targetTable) {
 		}(targetTable, count);
 	}
 	return targetTable;
+}
+
+function initTable(targetTable) {
+	var tables = getAllTables();
+	for (var count = 0; count < tables.length; count++) {
+		if (targetTable == tables[count])
+			updateTableData(targetTable, tablesData[count]);
+	}
+}
+
+function filterTable(targetInput, focus) {
+	if (event.keyCode == 13 || !focus) {
+		initTable(targetInput.parentNode);
+		var dataArray = getArray(targetInput.parentNode);
+		var replacement = "<b>" + targetInput.value + "</b>";
+		for (var count = dataArray.length - 1; count >= 0; count--) {
+			var temp = 0;
+			var found = false;
+			for (; temp < dataArray[count].length; temp++) {
+				if (dataArray[count][temp].match(targetInput.value)) {
+					found = true;
+					dataArray[count][temp] = dataArray[count][temp].replace(targetInput.value, replacement);
+				}
+			}
+			if (!found) {
+				targetInput.parentNode.deleteRow(count + 1);
+				dataArray.splice(count, 1);
+			}
+		}
+		updateTableData(targetInput.parentNode, dataArray);
+	}
 }
 
   // the main function that sort the table, colume is the colume of the table that being selected

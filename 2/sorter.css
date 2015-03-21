@@ -26,3 +26,7 @@ table th {
 table tr:nth-child(even) td {
 	background-color:#CCCCCC;
 }
+
+b {
+	color:red;
+}

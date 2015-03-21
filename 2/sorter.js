@@ -1,7 +1,6 @@
 /*
   ekuri wrote this sorter.js on 2015-3-11
-  this js try to sort the data of a table to ascend or descend order
-  laterly written on 2015-3-13
+  laterly written on 2015-3-21
 */
 
 window.onload = function () {
@@ -19,7 +18,12 @@ function makeFilterable(targetTable) {
 		targetTable.appendChild(textInput);
 		textInput.onkeydown = function(textInput) {
 			return function() {
-				filterTable(textInput);
+				filterTable(textInput, true);
+			}
+		}(textInput);
+		textInput.onblur = function(textInput) {
+			return function() {
+				filterTable(textInput, false);
 			}
 		}(textInput);
 	return targetTable;
@@ -41,19 +45,26 @@ function initTable(targetTable) {
 	}
 }
 
-function filterTable(targetInput) {
-	if (event.keyCode == 13) {
+function filterTable(targetInput, focus) {
+	if (event.keyCode == 13 || !focus) {
 		initTable(targetInput.parentNode);
 		var dataArray = getArray(targetInput.parentNode);
+		var replacement = "<b>" + targetInput.value + "</b>";
 		for (var count = dataArray.length - 1; count >= 0; count--) {
 			var temp = 0;
+			var found = false;
 			for (; temp < dataArray[count].length; temp++) {
-				if (dataArray[count][temp].match(targetInput.value))
-					break;
+				if (dataArray[count][temp].match(targetInput.value)) {
+					found = true;
+					dataArray[count][temp] = dataArray[count][temp].replace(targetInput.value, replacement);
+				}
 			}
-			if (temp == dataArray[count].length)
+			if (!found) {
 				targetInput.parentNode.deleteRow(count + 1);
+				dataArray.splice(count, 1);
+			}
 		}
+		updateTableData(targetInput.parentNode, dataArray);
 	}
 }
 
