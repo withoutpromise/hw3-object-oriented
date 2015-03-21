@@ -1,6 +1,6 @@
 /*
-  ekuri wrote this "base and derived.js" on 2015-3-20
-  laterly written on 2015-3-20
+  ekuri create this "base and derived.js" on 2015-3-20
+  laterly written on 2015-3-21
 */
 
 Base = function(initData) {

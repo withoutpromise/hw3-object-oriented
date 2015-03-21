@@ -23,6 +23,11 @@ table th {
 	text-align:left;
 }
 
-table tr:nth-child(even) td {
+table th:hover {
+	background-color:#0000FF;
+}
+
+
+.alternate {
 	background-color:#CCCCCC;
 }
