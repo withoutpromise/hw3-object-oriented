@@ -1,0 +1,28 @@
+.asc {
+	background-color: #aaaaff;
+	background-image: url(ascend.png);
+	background-repeat: no-repeat;
+	background-position:right;
+	padding-right: 20px;
+}
+.des {
+	background-color: #aaaaff;
+	background-image: url(descend.png);
+	background-repeat: no-repeat;
+	background-position:right;
+	padding-right: 20px;
+}
+.oddRow {
+	background: #dddddd;
+}
+.evenRow {
+	background: #ffffff;
+}
+.thead {
+	background: #4444dd;
+}
+.search {
+	color:red;
+	font-size: 120%;
+	font-weight: bold;
+}
