@@ -1,83 +1,42 @@
 window.onload = function() {
 	var tables = getAllTables();
-	makeAllTablesSortable(tables);
+	makeAllTablesFilterable(tables);
 }
 
 function getAllTables() {
 	return document.getElementsByTagName("table");
 }
-function makeAllTablesSortable(tables) {
-    // add icon
-    addIcon();
-	// add event
-	for (var i = 0; i < tables.length; i++) {
-		var th = tables[i].getElementsByTagName("th")
-		for (var k = 0; k < th.length; k++) {
-			th[k].setAttribute("onclick", "mySort(" + i + ", " + k + ");");
-		}
-	}
+function makeAllTablesFilterable(tables) {
+    addInputBox(tables);
 }
-function addIcon() {
-    var ths = document.getElementsByTagName("th");
-    for (var i = 0; i < ths.length; i++) {
-        var img = document.createElement("img");
-        img.setAttribute("class", "flag_img");
-        img.setAttribute("src", "ascend.png");
-        img.style.cssText = "width : 16px";
-        ths[i].appendChild(img);
+function addInputBox(tables) {
+    for (var i = 0; i < tables.length; i++) {
+    	var input_box = document.createElement("input");
+    	input_box.setAttribute("type", "text");
+    	input_box.setAttribute("id", i);
+    	input_box.setAttribute("oninput", "filter(this.value,this.id);");
+    	tables[i].appendChild(input_box);
     }
 }
-function changeIcon(flag) {
-    var imgs = document.getElementsByClassName("flag_img");
-    for (var i = 0; i < imgs.length; i++) {
-        if (flag == "up") {
-            imgs[i].src = "ascend.png";
-        } else {
-            imgs[i].src = "descend.png";
+function filter(value, id) {
+	var tables = getAllTables();
+	var rows = tables[id].getElementsByTagName("tr");
+	for (var i = 1; i < rows.length; i++) {
+        rows[i].style.display = "";
+        var segs = rows[i].getElementsByTagName("td");
+        var found = false;
+        for (var j = 0; j < segs.length; j++) {
+            segs[j].innerHTML = segs[j].innerHTML.replace("<strong>", "");
+            segs[j].innerHTML = segs[j].innerHTML.replace("</strong>", "");
+            if(segs[j].innerHTML.indexOf(value) != -1) {
+                found = true;
+                // emphasize text found
+                segs[j].innerHTML = segs[j].innerHTML.replace(value, "<strong>"+value+"</strong>");
+            }
+        }
+        // set unvisible
+        if (!found) {
+            rows[i].style.display = "none";
         }
     }
-}
-function mySort(tableNumber, column) {
-	var tables = document.getElementsByTagName("table");
-	var trs = tables[tableNumber].getElementsByTagName("tr");
-	// new array to store tr
-	var arr = [];
-	for (var i = 1; i < trs.length; i++) {
-		arr.push(trs[i]);
-	}
-    // sort & reverse
-	arr.sort(function(a, b){  
-        var v1 = a.cells[column].innerHTML;  
-        var v2 = b.cells[column].innerHTML;  
-        return v1.localeCompare(v2);  
-    });
-    var head = trs[0].cells[column];
-    
-    if (head.className == "sort") {
-        arr.reverse();
-    }
-    // add sorted array to dom
-    var tbody = tables[tableNumber].getElementsByTagName("tbody")[0];
-    for (var i = 0; i < arr.length; i++) {  
-        tbody.appendChild(arr[i]);  
-    }
-
-    // change the outlook of table head
-    for (var l = 0; l < tables.length; l++) {
-    	var ths = document.getElementsByTagName("th");
-    	for (var k = 0; k < ths.length; k++) {
-    		ths[k].style.cssText = "background-color: rgb(2,27,127)";
-    	}
-    }
-    //alert(head.className);
-    if (head.className == "sort") {
-        head.className = "reverse";
-        changeIcon("down");
-    }
-    else {
-        head.className = "sort";
-        changeIcon("up");
-    }
-    head.style.cssText = "background-color: rgb(163,177,252)";
-
 }
