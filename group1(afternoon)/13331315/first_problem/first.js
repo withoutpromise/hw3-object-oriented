@@ -1,7 +1,7 @@
 //到现在还是搞不清楚
-function Base(variable)
+function Base(InstanceVariable)
 {
-    this.instanceVariable = variable;
+    this.instanceVariable = InstanceVariable;
     this.instanceMethod = function()
     {
         console.log("This is from Base class instance-method, instance-variable is: " + this.instanceVariable);
@@ -15,12 +15,11 @@ Base.staticMethod = function()
     console.log("This is from Base class static-method, static-variable is : " + this.staticVariable);
 };
 
-function Derived(variable)
+function Derived(InstanceVariable)
 {
-    this.instanceVariable = variable;
+    this.instanceVariable = InstanceVariable;
     this.instanceMethod = function()
     {
-    	var base = new Base();
     	this.__proto__.instanceMethod.call(this);//to use the Base function.
         console.log("This is from Derived class instance-method, instance-variable is: " + this.instanceVariable);
     };
