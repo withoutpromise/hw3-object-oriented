@@ -1,0 +1,37 @@
+body {
+	font-family: "Microsoft Yahei", serif, Georgia;
+}
+
+th {
+	background-color: #191970;
+	color: white;
+	font-weight: bold;
+}
+
+table {
+	text-align: left;
+	border-collapse:collapse;
+	margin-bottom: 50px;
+}
+
+table,th, td {
+	border: 1px solid #B7B7B7;
+	padding: 0 5px;
+}
+
+tr:nth-child(even) td{
+	background-color: #DBDBDB;
+}
+
+
+#staff th:nth-child(1), #staff th:nth-child(2) {
+	width: 100px;
+}
+
+#staff th:nth-child(3) {
+	width: 130px;
+}
+
+input {
+	margin-top: 10px;
+}
