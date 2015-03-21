@@ -1,0 +1,45 @@
+/*13331236 谭笑*/
+table {
+    border: 1px solid #CCC;
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: relative;
+}
+
+table *{
+    border: 1px solid #CCC;
+    padding: 3px;
+    position: relative;
+}
+
+th {
+    color: #FFF;
+    background-color: #031B7F;
+    font-weight: bolder;
+    text-align: left;
+}
+
+#ascend, #descend{
+    position: absolute;
+    border: none;
+    right: 0;
+    bottom: 0;
+}
+
+.alternate {
+    background-color: #EEE;
+}
+
+#staff th{
+    min-width: 140px;
+}
+
+.ascend, .descend{
+    background-color: #A6AFFC;
+}
+
+.match {
+    background-color: #CFF;
+    border: none;
+    padding: 0;
+}
