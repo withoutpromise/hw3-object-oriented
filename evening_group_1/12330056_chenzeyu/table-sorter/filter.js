@@ -4,19 +4,16 @@ var getAllTables = function() {
 
 var makeAllTablesFilterable = function(tables) {
 	for (var index  = 0; index < tables.length; index++) {
-		var inputBar = document.createElement('input');
-		document.body.insertBefore(inputBar, tables[index]);
-		addEventHandler(tables[index], inputBar);
+		makeTableFilterabler(tables[index]);
 	}
 };
 
-var addEventHandler = function(table, inputBar) {
-	inputBar.oninput = function(table) {
-		console.log(this);
-		console.log("Input: " + this.value);
-		var content = this.value;
-		console.log(content);
-		var inputContent = new RegExp(content, "g");
+var makeTableFilterabler = function(table) {
+	var inputBar = document.createElement('input');
+	document.body.insertBefore(inputBar, table);
+	inputBar.oninput = function() {
+		var inputContent = this.value;
+		var Exp = new RegExp(inputContent, "g");
 		var thead = table.getElementsByTagName("th");
 		var tbody = table.getElementsByTagName("tbody")[0];
 		var trow = tbody.getElementsByTagName("tr");
@@ -26,9 +23,9 @@ var addEventHandler = function(table, inputBar) {
 			var visible = false;
 			for (var j = 0; j < tdata[i].length; j++) {
 				tdata[i][j] = tdata[i][j].innerHTML.replace(/<span class=\"highlight\">|<\/span>/g, "");
-				if (inputContent.test(tdata[i][j].innerHTML)) {
+				if (Exp.test(tdata[i][j].innerHTML)) {
 					visible = true;
-					tdata[i][j].innerHTML = tdata[i][j].innerHTML.replace(inputContent, "<span class = 'highlight'>" + textInputted + "</span>");
+					tdata[i][j].innerHTML = tdata[i][j].innerHTML.replace(Exp, "<span class = 'highlight'>" + inputContent + "</span>");
 				}
 			}
 			if (visible) {
