@@ -1,3 +1,4 @@
+// Base Function
 function Base(instance_var) {
     this.instanceVariable = instance_var;
 }
@@ -12,6 +13,7 @@ Base.prototype.instanceMethod = function() {
     console.log("This is from Base class instance-method, instance-variable is: " + this.instanceVariable);
 }
 
+// Derived Function
 function Derived(instance_var) {
     this.instanceVariable = instance_var;
 }
@@ -26,7 +28,14 @@ Derived.prototype.instanceMethod = function() {
     console.log("This is from Derived class instance-method, instance-variable is: " + this.instanceVariable)
 }
 
+/**
+ * Inheritence Function
+ *  @param base    {Function} the base function
+ *         derived {Function} the derived function
+ */
 function extend(base, derived) {
+
+    // For instanceMethod
     var bp = base.prototype;
     var dp = derived.prototype;
     for (var i in bp) {
@@ -40,6 +49,8 @@ function extend(base, derived) {
             }(bp[i], temp);
         }
     }
+
+    // For staticMethod
     var b = base;
     var d = derived;
     for (var i in b) {
@@ -53,15 +64,18 @@ function extend(base, derived) {
             }(b[i], temp);
         }
     }
+
 }
 
 extend(Base, Derived);
 
+// test1
 console.log("------------------test1---------------");
 example = new Derived('example');
 Derived.staticMethod();
 example.instanceMethod();
 
+// test2
 console.log("------------------test2---------------");
 example = new Derived('example');
 otherExample = new Derived('other-example');

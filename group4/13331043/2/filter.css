@@ -4,7 +4,7 @@ table {
     font-family: arial;
 }
 
-table, th, td {
+table, th, td, input {
     border: 1px solid #D3D3D3;
 }
 
@@ -28,6 +28,7 @@ thead {
     font-weight: bold;
 }
 
+/* For Highlight */
 .filter {
     color: red;
 }
