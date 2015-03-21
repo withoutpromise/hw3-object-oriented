@@ -1,0 +1,42 @@
+/*
+software process improvement
+week2 homework (table-sorter) style sheet
+*/
+
+/*style of table*/
+table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+th {
+  border: 1px solid gray;
+  background-color: darkblue;
+  color: white;
+  text-align: left;
+  padding-right: 30px;
+}
+td {
+  border: 1px solid gray;
+}
+
+/*color of row*/
+.oddrow {
+  background-color: white;
+}
+.evenrow {
+  background-color: gainsboro;
+}
+
+/*style of clicked table head*/
+.upButton {
+	background-color: lightskyblue;
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+.downButton {
+	background-color: lightskyblue;
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position: center right;
+}

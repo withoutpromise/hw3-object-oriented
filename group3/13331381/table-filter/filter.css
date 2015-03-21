@@ -1,0 +1,41 @@
+table {
+	border-collapse: collapse;
+}
+
+#todo {
+	width: 580px;
+}
+
+#staff {
+	width: 450px;
+}
+
+table, th, td {
+	border: 1px solid #808080;
+	padding: 3px 7px 3px 7px;
+}
+
+th {
+	font-size: 1.1em;
+	text-align: left;
+	background-color: #000080;
+	color: #FFFFFF;
+}
+
+th:hover {
+	cursor: pointer;
+}
+
+tr.alternate {
+	background-color: #dddddd;
+}
+
+input {
+	width: 400px;
+	height: 20px;
+	border: 1px solid #808080;
+}
+
+.highLight {
+	color: red;
+}

@@ -1,0 +1,39 @@
+table, th, td {
+	border-collapse: collapse;
+	border: 2px solid black;
+}
+
+th {
+	color: white;
+	font-weight: bold;
+	background-color: blue;
+}
+
+th:hover {
+	background-color: lightblue;
+}
+
+tr:nth-child(even) {
+	background-color: lightgray;
+}
+
+td, th{
+	padding: 10px;
+}
+
+th img {
+	display: none;
+	float: right;
+}
+
+.see{
+	display: initial;
+}
+
+.unsee {
+	display: none;
+}
+
+span {
+	background-color: yellow;
+}

@@ -1,0 +1,61 @@
+table {
+	border-collapse: collapse;
+}
+
+#todo {
+	width: 580px;
+}
+
+#staff {
+	width: 450px;
+}
+
+table, th, td {
+	border: 1px solid #808080;
+	padding: 3px 7px 3px 7px;
+}
+
+th {
+	font-size: 1.1em;
+	text-align: left;
+	background-color: #000080;
+	color: #FFFFFF;
+}
+
+th:hover {
+	cursor: pointer;
+}
+
+tr.alternate {
+	background-color: #dddddd;
+}
+
+.ascend {
+	background: #a4b0fd url(descend.png) no-repeat right;
+}
+
+.descend {
+	background: #a4b0fd url(ascend.png) no-repeat right;
+}
+
+.no_active {
+	background-color: #000080;
+}
+
+input {
+	width: 400px;
+	height: 20px;
+	border: 1px solid #808080;
+}
+
+.highLight {
+	color: red;
+}
+
+.match {
+	display: table-row;
+}
+
+.nomatch {
+	display: none;
+}
