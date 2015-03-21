@@ -1,0 +1,23 @@
+th {
+	background-color: rgb(3, 27, 127);
+	color:white;
+	font-size: 20px;
+}
+
+td, th {
+    text-align:left;
+    font-family: "微软雅黑";
+    border:1px solid gray;
+}
+
+img	{
+	width: 25px;
+    float: right;
+}
+	
+
+
+table {
+	border-collapse:collapse;
+    width:500px;
+}
