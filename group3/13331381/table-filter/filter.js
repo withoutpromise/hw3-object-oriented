@@ -40,22 +40,28 @@ function makeAllTablesFilterable(tables) {
             var tbody = table.getElementsByTagName("tbody")[0];
             var trs = tbody.getElementsByTagName("tr");
             for (var i = 0; i < trs.length; i++) {
-                // alert(trs[i].innerHTML);
+                if (trs[i].innerHTML.search(subText) == -1) {
+                    trs[i].style.display = "none";
+                } else {
+                    trs[i].style.display = "";
+                    trs[i].className = "match";
+                }
             }
         }
 
         function changeCss(table, subText) {
             var tbody = table.getElementsByTagName("tbody")[0];
-            var trs = tbody.getElementsByTagName("tr");
+            var trs = tbody.getElementsByClassName("match");
             for (var i = 0; i < trs.length; i++) {
-                trs[i].className = "";
-                if ((i+1) % 2 == 0) {       // set css style
-                    trs[i],className = "alternate";
+                // alert(trs[i].innerHTML);
+                if (i % 2 == 1) {
+                    highLight(trs[i], subText);
                 }
-                highLight(trs[i], subText);
             }
         }
 
-        function highLight(tr, subText) {}
+        function highLight(tr, subText) {
+            
+        }
     }
 }
