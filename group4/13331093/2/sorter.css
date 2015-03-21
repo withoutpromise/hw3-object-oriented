@@ -1,0 +1,40 @@
+table, tr *{
+    border: 1px solid gray;
+    margin: 0;
+    padding: 3px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even),tr:hover {
+    background-color: #DEDEDE;
+}
+
+th {
+    text-align: left;
+    background-color: #041A7F;
+    color: white;
+    font-weight:  bold;
+    padding-right:16px;
+}
+
+.ascend, .descend {
+    background-color: #A4B0FC;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.ascend {
+    background-image: url("ascend.png");
+}
+
+.descend {
+    background-image: url("descend.png");
+}
+
+/*高亮关键字,跟firefox的高亮一样*/
+.heightlight {
+    background-color: #38D878;
+    color: white;
+    border: none;
+    padding: 0;
+}
