@@ -32,7 +32,6 @@ function extend(base, derived) {
 		console.log("This is from Derived class static-method, static-variable is: " + this.staticVariable);
 	}
 	derived.prototype.instanceMethod = function() {
-		derived.staticMethod(); // 依题目所给的输出样式，猜测这里要调用staticMethod...
 		base.prototype.instanceMethod.call(this);
 		console.log("This is from Derived class instance-method, instance-variable is: " + this.instanceVariable);
 	};
@@ -49,5 +48,6 @@ console.log("**********************************************************");
 
 example = new Derived('example');
 otherExample = new Derived('other-example');
+Derived.staticMethod();
 example.instanceMethod();
 otherExample.instanceMethod();

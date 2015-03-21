@@ -15,10 +15,10 @@ window.onload = function() {
 		makeSortable(makeFilterable(tables[i]));
 	}
 }
+
 function getAllTables() { //从document对象中得到所有的table
 	return document.getElementsByTagName('table');
 }
-
 
 /************************************* sort *************************************/
 
@@ -48,15 +48,13 @@ function toSort_ascending(event) { //升序排序
 	}
 
 	var trs = sorted_Table.getElementsByTagName('tr');
-	for (var i = 0; i < trs.length; i++) {
-		if (trs[i].className.search("invisibility") != -1)
-			trs = trs.splice(i, 1);
-	}
 	for (var j = 1; j < trs.length-1; j++) { //冒泡排序
 		for (var i = 1; i < trs.length-j; i++) {
+			if(trs[i].className.search("invisibility") != -1 || trs[i+1].className.search("invisibility") != -1)
+				continue;//不显示的tr不排序
 			var tdsOfTr_1 = trs[i].getElementsByTagName('td');
 			var tdsOfTr_2 = trs[i+1].getElementsByTagName('td');
-			if (tdsOfTr_1[th_pos].firstChild.nodeValue > tdsOfTr_2[th_pos].firstChild.nodeValue) {
+			if (tdsOfTr_1[th_pos].innerText > tdsOfTr_2[th_pos].innerText) {
 				tr_Exchang(tdsOfTr_1, tdsOfTr_2); //互换
 			}
 		}
@@ -80,16 +78,13 @@ function toSort_descending(event) { //降序排序
 	}
 
 	var trs = sorted_Table.getElementsByTagName('tr');
-	for (var i = 0; i < trs.length; i++) {
-		if (trs[i].className.search("invisibility") != -1)
-			trs = trs.splice(i, 1);
-	}
-
 	for (var j = 1; j < trs.length-1; j++) { //冒泡排序
 		for (var i = 1; i < trs.length-j; i++) {
+			if(trs[i].className.search("invisibility") != -1 || trs[i+1].className.search("invisibility") != -1)
+				continue; //不显示的tr不排序
 			var tdsOfTr_1 = trs[i].getElementsByTagName('td');
 			var tdsOfTr_2 = trs[i+1].getElementsByTagName('td');
-			if (tdsOfTr_1[th_pos].firstChild.nodeValue < tdsOfTr_2[th_pos].firstChild.nodeValue) {
+			if (tdsOfTr_1[th_pos].innerText < tdsOfTr_2[th_pos].innerText) {
 				tr_Exchang(tdsOfTr_1, tdsOfTr_2); //互换
 			}
 		}
@@ -113,12 +108,11 @@ function reset_Other_Th(ths) { //重置表头单元格的状态
 function tr_Exchang(tds_1, tds_2) { //互换td的文本内容
 	var len = tds_1.length;
 	for (var i = 0; i < len; i++) {
-		var tmp = tds_1[i].firstChild.nodeValue;
-		tds_1[i].firstChild.nodeValue = tds_2[i].firstChild.nodeValue;
-		tds_2[i].firstChild.nodeValue = tmp;
+		var tmp = tds_1[i].innerHTML;
+		tds_1[i].innerHTML = tds_2[i].innerHTML;
+		tds_2[i].innerHTML = tmp;
 	}
 }
-
 
 /************************************* filter *************************************/
 
@@ -136,12 +130,13 @@ function makeFilterable (table) {
 }
 
 function filter(event) {
-	var filter_table = this.nextSibling; //得到所在的table
-	var trs = filter_table.tBodies[0].rows; //得到tbody里面所有的tr
+	var filter_Table = this.nextSibling; //得到所在的table
+	var trs = filter_Table.tBodies[0].rows; //得到tbody里面所有的tr
 	for (var i = 0; i < trs.length; i++) {
 		trs[i].className = trs[i].className.replace(/ invisibility/g, ""); // 恢复表格原始状态
 		trs[i].innerHTML = trs[i].innerHTML.replace(/<span class=\"keyword\">|<\/span>/g, "");
-		if ("" == this.value) continue;// 空白不查询
+		if ("" == this.value)// 空白不查询
+			continue;
 		var tds = trs[i].cells; //得到一个tr中的所有td
 		var is_Exist_Keyword = false;
 		for (var j = 0; j < tds.length; j++) {

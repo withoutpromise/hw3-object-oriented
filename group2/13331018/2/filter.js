@@ -11,6 +11,7 @@ window.onload = function() {
 	var tables = getAllTables();
 	makeAllTablesFilterable(tables);
 }
+
 function getAllTables() { //从document对象中得到所有的table
 	return document.getElementsByTagName('table');
 }
@@ -24,8 +25,8 @@ function makeAllTablesFilterable(tables) { //变成filterable
 }
 
 function filter(event) {
-	var filter_table = this.nextSibling; //得到所在的table
-	var trs = filter_table.tBodies[0].rows; //得到tbody里面所有的tr
+	var filter_Table = this.nextSibling; //得到所在的table
+	var trs = filter_Table.tBodies[0].rows; //得到tbody里面所有的tr
 	for (var i = 0; i < trs.length; i++) {
 		trs[i].className = trs[i].className.replace(/ invisibility/g, ""); // 恢复表格原始状态
 		trs[i].innerHTML = trs[i].innerHTML.replace(/<span class=\"keyword\">|<\/span>/g, "");
