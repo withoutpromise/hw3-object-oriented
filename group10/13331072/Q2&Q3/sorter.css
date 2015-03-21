@@ -1,0 +1,28 @@
+table,th,td {
+border-collapse:collapse;
+border:1px solid black;
+text-align:left;
+}
+th {
+	background-color:#330099;
+	color: white;
+	padding-right: 30px;
+}
+tr.alternate {
+	background-color: gray;
+}
+th.ascend {
+	background: url("ascend.png");
+	background-repeat: no-repeat;
+	background-color: #996699;
+	background-position: right;
+}
+th.descend {
+	background: url("descend.png");
+	background-repeat: no-repeat;
+	background-color: #996699;
+	background-position: right;
+}
+.had {
+	background-color: red;
+}
