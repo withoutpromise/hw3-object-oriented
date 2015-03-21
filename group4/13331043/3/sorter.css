@@ -1,0 +1,48 @@
+table {
+    border-collapse: collapse;
+    text-align: left;
+    font-family: arial;
+}
+
+table, th, td, input {
+    border: 1px solid #D3D3D3;
+}
+
+/* Using pseudo for different color in even and odd rows */
+tbody tr:nth-child(even) {
+    background-color: #E8E8E8;
+}
+
+th, td {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.2rem;
+    padding-right: 1.5rem;
+
+    transition: background-color 0.5s ease-in-out;
+}
+
+thead {
+    background-color: #27408B;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*For after click*/
+th.ascend {
+    background: #B0C4DE url("ascend.png") no-repeat right;
+
+    transition: background-color 0.1s ease-in-out;
+}
+
+th.descend {
+    background: #B0C4DE url("descend.png") no-repeat right;
+
+    transition: background-color 0.1s ease-in-out;
+}
+
+/* For Highlight */
+.filter {
+    color: red;
+}
