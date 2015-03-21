@@ -1,0 +1,52 @@
+body {
+	font-family: Verdana ,Tahoma,sans-serif;
+
+}
+table thead th{
+	background-color: rgba(25,25,112,1);
+	color: white;
+	font-weight: bold;
+	text-align: left;
+	padding-right: 25px;
+}
+
+table
+{
+border-collapse:collapse;/*让边框重叠*/
+}
+table,th, td
+{
+border: 2px solid gray;
+}
+.alternate {
+	background-color: rgba(192,192,192,0.5);
+}
+table *{
+	padding: 5px;
+}
+.ascend {
+	background-image: url("ascend.png");/*升序时标题栏属性*/
+	background-color: rgba(25,25,112,0.3);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.descend {
+	background-image: url("descend.png");/*降序时标题栏属性*/
+	background-color: rgba(25,25,112,0.3);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.substring {
+	background-color:rgba(25,25,112,0.4);
+}
+
+.filter {
+	width: 270px;
+	color: rgba(56,56,56,0.6);
+}
