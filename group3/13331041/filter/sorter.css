@@ -1,0 +1,48 @@
+table {
+	font-weight: 800;
+}
+thead {
+	background-color: #021C7D;
+	border: solid;
+	color: white;
+	cursor: pointer;
+}
+tbody {
+	border: solid;
+}
+td, th{
+	height: 25px;
+	padding-right: 35px;
+	padding-left: 5px;
+	text-align: left;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+.odd {
+	background-color: white;
+}
+.increase {
+	background-color: #A6AFFC;
+	background-image: url(ascend.png);
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+.decrease {
+	background-color: #A6AFFC;
+	background-image: url(descend.png);
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+.alternate {
+	background-color: #DDDDDD;
+}
+.filtered {
+	visibility:hidden; 
+}
+.highlight {
+	color: red;
+}
+.normal {
+	color: black;
+	font-size: 12pt;
+}
