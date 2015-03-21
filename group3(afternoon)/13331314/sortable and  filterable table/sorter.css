@@ -1,0 +1,57 @@
+th {
+	border: 1px solid #98A9EC;
+	background-color: #031B7F;
+	color: white;
+	transition:background-color 1s;
+}
+
+th:hover {
+	background-color: #A3B1FC;
+}
+
+td {
+	border: 1px solid #7181BC;
+	padding: 2px;
+}
+
+td, th {
+	text-align: left;
+	height: 20px;
+	padding: 2px;
+}
+
+.alternate {
+	background-color: #DDDDDD;
+}
+
+table {
+	border:0;
+	border-spacing:0;
+  }
+
+  #todo {
+  	width: 470px;
+  }
+
+ #staff  {
+ 	width: 420px;
+  }
+
+.Ascending {
+	background-image: url("ascend.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #A3B1FC;
+}
+
+.Descending {
+	background-image: url("descend.png");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #A3B1FC;
+}
+
+input {
+	width: 130px;
+	margin:10px ;
+}

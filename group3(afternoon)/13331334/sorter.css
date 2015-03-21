@@ -1,0 +1,44 @@
+table {
+  	border-collapse:collapse;
+}
+
+td, th {
+	border: 1px solid #BEBEBE;
+}
+
+th {
+	background-color: rgb(2, 26, 126);
+	color: white;
+	text-align: left;
+	padding-right: 16px;  /*for the picture*/
+	font-weight: bolder;
+}
+
+th:hover, th.ascend, th.descend {
+	background-color: rgb(164, 176, 252);
+}
+
+th.ascend, th.descend {
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+th.ascend {
+	background-image: url("ascend.png");
+}
+
+th.descend {
+	background-image: url("descend.png");
+}
+
+tr.alternate {
+	background-color: rgb(221, 221, 221);
+}
+
+tr.hidden {
+	display: none;
+}
+
+span.highlight {
+	background-color: yellow;
+}

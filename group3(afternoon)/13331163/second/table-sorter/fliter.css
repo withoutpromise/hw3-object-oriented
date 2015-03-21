@@ -1,0 +1,63 @@
+/*设置边界*/
+table, th, td {
+	border-style: solid;
+	border-width: 0.1em;
+	border-color: #BCBEBD;
+	border-collapse: collapse;
+}
+
+/*固定表格*/
+table {
+	width: 50em;
+	table-layout: fixed;
+}
+
+/*设置th和td内文字的左对齐*/
+th, td {
+	text-align: left;
+	padding: 0.3em;
+	font-family: Arial, Verdana, Sans-serif;
+}
+
+/*设置th默认的状态*/
+.thDefault {
+	background-color: #021B7D;
+	color: #F7FEFF;
+}
+
+/*设置th升序的状态*/
+.ascending {
+	background-color: #A5ADF8;
+	background-image: url('ascend.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+/*设置th降序的状态*/
+.descending {
+	background-color: #A5ADF8;
+	background-image: url('descend.png');
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+/*行的奇偶样式*/
+.alternate {
+	background-color: #DDDDDD;
+}
+
+/*过滤输入框的样式*/
+.filterInput {
+	width: 15em;
+	margin-bottom: 1em;
+}
+
+/*行隐藏*/
+.hidden {
+	display: none;
+}
+
+/*高亮标志匹配的信息*/
+.highlight {
+	color: red;
+}
