@@ -1,0 +1,35 @@
+
+table {
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table, td, th {
+	border: 1px solid #D1BBFF;
+	padding-left: 5px;
+	padding-right: 25px;
+}
+
+thead {
+	color: white;
+	text-align:left;
+	background-color: #000088;
+}
+
+.alternate {
+	background-color: #DDDDDD;
+}
+
+.descend {
+	background-image: url("descend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: rgb(146, 153, 254);
+}
+
+.ascend {
+	background-image: url("ascend.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: rgb(146, 153, 254);
+}
