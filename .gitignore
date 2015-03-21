@@ -1,3 +1,9 @@
 .DS_Store
 *.sw*
 *.log
+inheritance/inheritance.js
+table-filter/ascend.png
+table-filter/descend.png
+*.css
+table-filter/filter.js
+*.html
