@@ -1,0 +1,9 @@
+.filter-nodisplay {
+  display: none;
+}
+
+.filter-box {
+  height: 20px;
+  width: 100px;
+  font-size: 18px;
+}
