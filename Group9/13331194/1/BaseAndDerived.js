@@ -9,7 +9,7 @@ Base.staticMethod = function() {
 
 Base.prototype.instanceMethod = function() {
 	//Base.staticMethod.apply(Derived, arguments);
-	Derived.staticMethod.apply(Derived, arguments);
+	//Derived.staticMethod.apply(Derived, arguments);
 	console.log("This is from Base class instance-method, instance-variable is: " + this.instanceVariable);
 }
 
@@ -71,5 +71,6 @@ console.log("------------------------The 2nd one------------------------");
 
 example = new Derived('example');
 otherExample = new Derived('other-example');
+Derived.staticMethod();
 example.instanceMethod();
 otherExample.instanceMethod();
