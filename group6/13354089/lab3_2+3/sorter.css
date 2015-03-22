@@ -1,0 +1,40 @@
+h1,h2{
+	font-family:"Times New Roman",Georgia,Serif;
+}
+#todo{
+	width: 450px;
+	height: 100px;
+}
+#staff{
+	width: 400px;
+	height: 100px;
+}
+
+table,td,th{
+	border:1px solid #999999;
+	font-family:Arial,Verdana,Sans-serif;
+	border-collapse: collapse;
+}
+
+.alternate{
+	background-color:#CCCCCC;
+}
+
+th{
+	color: white;
+	text-align:left;
+	background-color: #000066;
+	
+}
+
+.ascend {
+  background: url("ascend.png") 0 0 no-repeat #9966FF;
+  background-position: right;
+}
+.descend {
+  background: url("descend.png") 0 0 no-repeat #9966FF;
+  background-position: right;
+}
+span{
+	font-weight: bold;
+}
