@@ -49,3 +49,7 @@ thead tr {
 tbody tr:nth-child(2n) {
     background-color: rgba(222,222,222,1);
 }
+
+span.hight-light {
+    background-color: yellow;
+}

@@ -10,8 +10,7 @@ var hasPicture = true;
 
 window.onload = function() {
     var tables = getAllTables();
-    // makeAllTablesSortable(tables);
-    makeAllTablesFilterable(tables);
+    makeAllTablesSortableAndFilterable(tables);
 }
 
 function getAllTables() {
@@ -20,24 +19,24 @@ function getAllTables() {
     return tables;
 }
 
-function makeAllTablesSortable(tables) {
-    dealAllTablesByGivenFunction(tables, addSortEventToTable);
-    return tables;
+function makeAllTablesSortableAndFilterable(tables) {
+    dealAllTablesByGivenFunction(tables, makeSortable, makeFilterable);
 }
 
-function dealAllTablesByGivenFunction(tables, func) {
+function dealAllTablesByGivenFunction(tables, func1, func2) {
     for (var i = 0; i < tables.length; i++) {
-        func(tables[i]);
+        func1(func2(tables[i]));
     }
 }
 
-function addSortEventToTable(table) {
+function makeSortable(table) {
     var tableHeads = table.getElementsByTagName('th');
     for (var i = 0; i < tableHeads.length; i++) {
         (function() {
             addSortEventToTableHead(i, tableHeads, table);
         })();
     }
+    return table;
 }
 
 function addSortEventToTableHead(column, tableHeads, table) {
@@ -96,6 +95,9 @@ function swapRow(row1, row2, columnCount) {
         var temp = row1[i].innerHTML;
         row1[i].innerHTML = row2[i].innerHTML;
         row2[i].innerHTML = temp;
+        var display = row1[i].style.display;
+        row1[i].style.display = row2[i].style.display;
+        row2[i].style.display = display;
     }
 }
 
@@ -127,15 +129,13 @@ function initializeTableHeadStyle(tableHeads, column) {
     }
 }
 
-// 3.20 update
+// 3.22 update
 // Add a function to make table filterable
-function makeAllTablesFilterable(tables) {
-    dealAllTablesByGivenFunction(tables, addFilterToTable);
-}
 
-function addFilterToTable(table) {
+function makeFilterable(table) {
     var inputFilter = createFilterInputBox(table);
     addEventToFilter(inputFilter, table);
+    return table;
 }
 
 function createFilterInputBox(table) {
@@ -147,11 +147,18 @@ function createFilterInputBox(table) {
 
 function addEventToFilter(inputFilter, table) {
     inputFilter.addEventListener('change', function() {
+        clearHightLightWord(table);
         var word = inputFilter.value;
-        if (word !== '') {
-            screenWordInTable(word, table);
-        }
+        screenWordInTable(word, table);
     });
+}
+
+function clearHightLightWord(table) {
+    var tableCells = table.getElementsByTagName('td');
+    var regex = /<span class="hight-light">(.+?)<\/span>/g;
+    for (var i = 0; i < tableCells.length; i++) {
+        tableCells[i].innerHTML = tableCells[i].innerHTML.replace(regex, '$1');
+    }
 }
 
 function screenWordInTable(word, table) {
@@ -160,26 +167,48 @@ function screenWordInTable(word, table) {
     for (var i = 0; i < tableRows.length; i++) {
         dealTableRowByWord(word, tableRows[i]);
     }
+    setBackgroundGrey(tableRows);
 }
 
 function dealTableRowByWord(word, tableRow) {
     var tableCells = tableRow.getElementsByTagName('td');
     var matchFlag = false;
     for (var i = 0; i < tableCells.length; i++) {
-        var textNode = tableCells[i].innerHTML;
-        var position = textNode.search(word); 
-        if (position !== -1) {
+        if (tableCells[i].innerHTML.search(word) !== -1) {
             matchFlag = true;
-            hightLightTheWord(word, position, tableCells[i]);
+            if (word !== '') {
+                hightLightTheWord(word, tableCells[i]);
+            }
         }
     }
     if (matchFlag === false) {
-        tableRow.style.display = 'none';
+        for (var i = 0; i < tableCells.length; i++) {
+            tableCells[i].style.display = 'none';
+        }
     } else {
-        tableRow.style.display = 'table-row';
+        for (var i = 0; i < tableCells.length; i++) {
+            tableCells[i].style.display = 'table-cell';
+        }
     }
 }
 
-function hightLightTheWord(word, position, tableCell) {
-    return;
-} 
+function hightLightTheWord(word, tableCell) {
+    var regex = new RegExp(word, 'g');
+    tableCell.innerHTML = tableCell.innerHTML.replace(regex, '<span class="hight-light">' + word + '</span>');
+}
+
+function setBackgroundGrey(tableRows) {
+    var displayCount = 0;
+    for (var i = 0; i < tableRows.length; i++) {
+        var tableCell = tableRows[i].getElementsByTagName('td')[0];
+        if (tableCell.style.display === 'none') {
+            continue;
+        }
+        displayCount++;
+        if (displayCount % 2 === 0) {
+            tableRows[i].style.backgroundColor = 'rgba(222,222,222,1)'
+        } else {
+            tableRows[i].style.backgroundColor = 'white';
+        }
+    }
+}
