@@ -1,0 +1,24 @@
+table {
+    width: 30em;
+}
+
+table, th, td {
+    border: 1px solid #666666;
+    border-collapse: collapse;
+    font-family: Arial;
+}
+
+th {
+    background-color: #000099;
+    text-align: left;
+    font-family: Georgia;
+    color: white;
+}
+
+th:hover {
+    background-color: #6699FF;
+}
+
+.alternate {
+    background-color: #D0D0D0;
+}
