@@ -1,0 +1,37 @@
+/*
+ * Project: hw3
+ *
+ * File: filter.css
+ *
+ * Author: Junhong Chen
+ *
+ * Created: 15/03/21
+ *
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, tr, td {
+  border: 1px solid #A9A9A9;
+  padding-left: 3px;
+  text-align: left;
+  font-family: Arial, Verdana, Sans-serif;
+}
+
+th {
+  background-color: #220088;
+  padding-right: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.alternate {
+  background-color: #ccc;
+}
+
+td span {
+  font-weight: bolder;
+  color: blue;
+}
